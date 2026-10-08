@@ -29,9 +29,9 @@ export interface ContactContent {
 }
 
 export const defaultAboutContent: AboutContent = {
-  statementLine1: "Hi! I'm Magnus, a human-centric,",
+  statementLine1: "Hi! I'm Magnus, a human centric,",
   statementLine2: "Industrial Designer specialising in",
-  statementLine3: "creating life-improving products.",
+  statementLine3: "creating life improving products.",
   nameBadge: "Magnus Baustad",
   locationBadge: "Oslo, Norway",
   toolsTitle: "Tools & Capabilities",
@@ -51,13 +51,13 @@ export const defaultAboutContent: AboutContent = {
     'Design for Manufacturing (DFM)',
     'Mechanical Disassembly',
   ],
-  bioParagraph1: "I'm an industrial design student",
+  bioParagraph1: "I’m an industrial design student in my final year at the Oslo School of Architecture and Design.",
   bioParagraph2:
-    "Rooted in Scandinavian design traditions of functional honesty, physical craftsmanship, and deep empathy for human daily rituals.",
+    "I’m interested in designing products that make everyday life a little better. I’m especially drawn to the things we use every day, and to how thoughtful design can improve the way we live, move, work, and interact with our surroundings.",
   bioParagraph3:
-    "From rapid tactile foam prototypes in the workshop to micron-tolerance parametric CAD surfaces, every curve and parting line is tested physically.",
+    "I use real materials, production methods, technical limitations, and contextual constraints as important parts of my design process. I like getting close to how something is actually made, and I’m often most engaged when an idea moves from the screen into the workshop.",
   bioParagraph4:
-    "Passionate about circular product architecture, tool-free repairability, and durable life-improving objects.",
+    "My work spans products and furniture, with a focus on creating practical objects that have a clear connection between their purpose, material, and way of being made.",
   ctaText: "Let's collaborate",
   methodologyTitle: "Methodology & Core Disciplines",
   methodologies: [
@@ -65,19 +65,19 @@ export const defaultAboutContent: AboutContent = {
       id: '01',
       title: 'Human Ergonomics',
       description:
-        'Biomechanical grip analysis, tactile feedback calibration, and observational user research to craft intuitive physical interactions.',
+        'Ergonomic analysis, tactile feedback calibration, interviews and observational user research.',
     },
     {
       id: '02',
       title: 'Materiality & CMF',
       description:
-        'Exploration of circular bio-composites, cast aluminum, CNC brass, and textured finishes engineered to age gracefully with natural patina.',
+        'Exploration of circular bio-composites, cast aluminum, CNC brass and textured finishes.',
     },
     {
       id: '03',
       title: 'Circular Assembly',
       description:
-        'Design for Disassembly (DfD), zero-glue mechanical joints, and modular architectures designed for repairability and easy recycling.',
+        'Design for disassembly, zero-glue joints, design for repairability and easy recycling.',
     },
   ],
 };

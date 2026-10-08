@@ -66,159 +66,181 @@ import ty7Image from '../assets/images/Ty7.png';
 export const projects: Project[] = [
   {
     id: 'rottefella-extend',
-    title: 'Rottefella Extend',
-    subtitle: 'Dynamic Nordic binding system engineered for seamless biomechanical force transmission',
+    title: 'Rottefella Move',
+    subtitle: 'A micro-adjustable bike stem for gravel cyclists',
     category: 'Sports Equipment & Ergonomics',
     year: '2025',
-    clientOrContext: 'Rottefella / Outdoor Innovation',
+    clientOrContext: 'Collaboration Project with Rottefella',
     coverImage: r9Image,
     coverImageClassName: '',
     processImages: [ty1Image, ty21Image, ty6Image],
     resultImages: [ty3Image, ty4Image, ty5Image],
     problem: {
       title: 'Force Vector Losses & Ice Buildup in Classic Cross-Country Bindings',
-      summary: 'Conventional Nordic bindings experience torsional play during dynamic skate and classic strides, wasting critical metabolic energy and collecting compacted snow under changing track conditions.',
+      summary:
+        'Rottefella wanted to explore opportunities beyond skiing and into a broader, year-round sports context. The challenge was to identify a new market where their expertise in adjustable systems, technical performance, and precision manufacturing could translate into a meaningful product opportunity.',
       points: [
         'Energy loss through lateral micro-twisting during push-off phase.',
         'Inflexible stance balance positions requiring workbench tools to adjust.',
-        'Ice compaction beneath the boot interface altering flex resistance.'
-      ]
+        'Ice compaction beneath the boot interface altering flex resistance.',
+      ],
     },
     whatAndWhy: {
-      what: 'Rottefella Extend is an ultra-rigid, lightweight Nordic binding architecture featuring instant tool-free dynamic positioning.',
-      why: 'By refining boot-to-ski contact geometry and incorporating a single-touch lever, athletes can reposition their center of gravity on-the-fly to adapt to shifting snow and gradient conditions.',
+      what: 'The concept is an extendable stem that allows gravel cyclists to micro-adjust the position of the handlebars while riding. By changing the reach of the handlebars, the system gives the rider greater control over their riding position without requiring tools or stopping.',
+      why: 'Gravel cycling moves between asphalt, gravel, and more technical terrain, with each surface demanding something different from the rider. On asphalt, a longer and more forward position supports efficiency and power transfer. As the terrain becomes more technical, a shorter position brings the handlebars closer, creating greater control and freedom of movement. The adjustable stem allows the bike to adapt to these changing conditions as the rider moves through the landscape.',
       decisions: [
         {
           title: 'Carbon-Infused Matrix',
-          description: 'A continuous composite spine eliminates torsional twist while cutting overall mass by 28%.'
+          description: 'A continuous composite spine eliminates torsional twist while cutting overall mass by 28%.',
         },
         {
           title: 'QuickLock Stance Tuner',
-          description: 'An ergonomic glove-friendly lever enables instantaneous fore/aft adjustment along the NIS profile.'
+          description: 'An ergonomic glove-friendly lever enables instantaneous fore/aft adjustment along the NIS profile.',
         },
         {
           title: 'Hydrophobic Contact Shield',
-          description: 'Micro-textured low-surface-energy elastomers shed wet snow and prevent ice packing.'
-        }
-      ]
+          description: 'Micro-textured low-surface-energy elastomers shed wet snow and prevent ice packing.',
+        },
+      ],
     },
     process: {
-      intro: 'Developed through biomechanical gait sensor trials, snow tunnel wind tests, and functional CNC prototypes tested across Norwegian winter trails.',
+      intro:
+        'Developed through biomechanical gait sensor trials, snow tunnel wind tests, and functional CNC prototypes tested across Norwegian winter trails.',
       phases: [
         {
           phaseNumber: '01',
           title: 'Biomechanical Force Mapping & CAD Architecture',
-          description: 'Analyzing stride dynamics and pressure propagation to optimize torsional rib structures and hinge pivot points.',
-          images: []
-        }
-      ]
+          description:
+            'Analyzing stride dynamics and pressure propagation to optimize torsional rib structures and hinge pivot points.',
+          images: [],
+        },
+      ],
     },
     finalResult: {
-      summary: 'Rottefella Extend combines sculptural Scandinavian minimalism with uncompromising athletic efficiency, delivering direct power delivery with every stride.',
+      summary:
+        'Rottefella Extend combines sculptural Scandinavian minimalism with uncompromising athletic efficiency, delivering direct power delivery with every stride.',
       specs: [
         { label: 'Weight', value: '185g per pair' },
         { label: 'Adjustment Range', value: '±25mm tool-free fore/aft position' },
-        { label: 'Materials', value: 'Carbon-reinforced Bio-Polyamide, Stainless Hardware' }
+        { label: 'Materials', value: 'Carbon-reinforced Bio-Polyamide, Stainless Hardware' },
       ],
-      images: []
-    }
+      images: [],
+    },
+    focus: 'Brand Identity & Expansion',
+    sectionTitles: {
+      contextLabel: 'Context: ',
+      focusLabel: 'Focus: ',
+    },
   },
   {
     id: 'lumen-modular-kettle',
     title: 'Focus Watch',
-    subtitle: 'A distilled timepiece balancing mechanical presence with distraction-free utility',
-    category: 'Wearable Technology & Horology',
+    subtitle: 'Experience time, don’t measure it',
+    category: 'Home Appliances & Circular Design',
     year: '2024',
-    clientOrContext: 'Independent Exploration',
+    clientOrContext: 'ArtCenter College of Design',
     coverImage: lumenCoverImage,
     coverImageClassName: '!object-[50%_75%]',
     processImages: [k1Image, k2Image],
     resultImages: [p1Image, p2Image, p3Image],
     problem: {
-      title: 'Notification Overload and Digital Fatigue in Modern Wearables',
-      summary: 'Modern smartwatches create perpetual interruptions and screen dependency, eroding intentional focus and time consciousness.',
+      title: 'The 2-Year Planned Obsolescence of Small Domestic Appliances',
+      summary:
+        'In a world of screens, notifications, and constant digital feedback, time is increasingly something we monitor rather than simply experience. The challenge was to rethink the wristwatch as a quieter object - one that provides information without demanding attention.',
       points: [
-        'Constant haptic alerts that fracture deep creative focus.',
-        'Fragile glass touchscreens requiring constant battery recharges.',
-        'Disposable consumer electronics lifecycles with non-serviceable components.'
-      ]
+        'Microplastic leaching caused by boiling water repeatedly in polypropylene tanks.',
+        'Permanent ultrasonic welding that prevents heating element inspection or descaling.',
+        'Awkward pour geometry leading to wrist strain and splashing hot water.',
+      ],
     },
     whatAndWhy: {
-      what: 'Focus Watch is a mechanical-digital hybrid timepiece crafted from brushed 316L stainless steel and sapphire crystal, engineered for intentional living.',
-      why: 'By prioritizing high-contrast physical hands over glowing notifications, the wearer regains calm ownership over their daily hours.',
+      what: 'The aim was to create a watch that feels like a natural extension of Teenage Engineering’s playful, minimal, and retro-inspired design language. By stripping timekeeping down to its essentials and connecting it to music, the project explores a slower and more focused relationship with the wristwatch. The watch uses an analog display that shows only the current hour, intentionally removing the precision of minutes and seconds. A small secondary interface displays the currently playing song, while wireless connectivity to earbuds allows music to become part of the experience.',
+      why: 'Instead of competing for attention through notifications and constant updates, the watch focuses on two things: the current hour and the music accompanying it. The result is a more restrained wearable experience where technology supports the moment rather than interrupting it.',
       decisions: [
         {
-          title: 'Monolithic Steel Case',
-          description: 'CNC-milled 316L stainless steel provides high corrosion resistance, durability, and satisfying wrist presence.'
+          title: 'Thermal Glass Body',
+          description:
+            'High-purity laboratory-grade borosilicate prevents taste contamination and visually indicates water level naturally without micro-tubes.',
         },
         {
-          title: 'High-Legibility Dial Architecture',
-          description: 'Subtle laser-etched indexes and matte markers optimized for instantaneous reading under all lighting conditions.'
+          title: 'Precision Pour Spout',
+          description:
+            'Calculated gooseneck spout curve allows micro-metered pour-over flow without drips or laminar turbulence.',
         },
         {
-          title: 'Tool-Free Quick-Release Lugs',
-          description: 'Integrated spring-bar system enabling seamless strap swaps across vegetable-tanned leather and woven nylon.'
-        }
-      ]
+          title: 'Cold-Touch Cast Wooden Handle',
+          description:
+            'Ergonomic FSC-certified Nordic ash handle designed with an offset balance point for zero counter-torque on wrists.',
+        },
+      ],
     },
     process: {
-      intro: 'Iterating case ergonomics, crown knurling patterns, and lug angles to achieve balanced wrist comfort across various wrist sizes.',
+      intro:
+        'Prototyping focused heavily on hydrodynamic pour tests, fluid thermodynamics, and modular disassembly tolerances.',
       phases: [
         {
           phaseNumber: '01',
           title: 'Hydrodynamic Spout Prototyping',
-          description: 'Testing 14 variations of 3D printed spout geometries with food-safe silicone casting to achieve optimal water laminar flow.',
+          description:
+            'Testing 14 variations of 3D printed spout geometries with food-safe silicone casting to achieve optimal water laminar flow.',
           images: [
             {
               url: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1200&auto=format&fit=crop',
               caption: '3D printed spout test iterations hooked to hydraulic test rig.',
               tag: 'Hydraulic Rig',
-              type: 'prototype'
+              type: 'prototype',
             },
             {
               url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop',
               caption: 'Thermal imaging of induction coil base heat dispersion.',
               tag: 'Thermal Analysis',
-              type: 'cad'
-            }
-          ]
+              type: 'cad',
+            },
+          ],
         },
         {
           phaseNumber: '02',
           title: 'Disassembly Architecture',
-          description: 'Structuring every sub-assembly to be dismountable using a single standard coin or flat screwdriver.',
+          description:
+            'Structuring every sub-assembly to be dismountable using a single standard coin or flat screwdriver.',
           images: [
             {
               url: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=1200&auto=format&fit=crop',
               caption: 'Exploded mechanical CAD layout of the base module and thermal controller.',
               tag: 'Exploded CAD',
-              type: 'cad'
-            }
-          ]
-        }
-      ]
+              type: 'cad',
+            },
+          ],
+        },
+      ],
     },
     finalResult: {
-      summary: 'LUMEN stands as an exemplar of the Right to Repair movement, proving domestic appliances can achieve timeless minimalist beauty while honoring ecological responsibility.',
+      summary:
+        'LUMEN stands as an exemplar of the Right to Repair movement, proving domestic appliances can achieve timeless minimalist beauty while honoring ecological responsibility.',
       specs: [
         { label: 'Capacity', value: '1.0 Liters' },
         { label: 'Power', value: '1500W Induction Rapid Boil' },
         { label: 'Materials', value: 'Borosilicate Glass, 316 Stainless Steel, Solid Ash Wood' },
-        { label: 'Repairability Index', value: '9.8 / 10' }
+        { label: 'Repairability Index', value: '9.8 / 10' },
       ],
       images: [
         {
           url: 'https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?q=80&w=1600&auto=format&fit=crop',
           caption: 'Final production kettle on brushed stainless inductive heating base.',
-          aspectRatio: 'wide'
+          aspectRatio: 'wide',
         },
         {
           url: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1600&auto=format&fit=crop',
           caption: 'Detail of steam release gasket and wood handle junction.',
-          aspectRatio: 'wide'
-        }
-      ]
-    }
+          aspectRatio: 'wide',
+        },
+      ],
+    },
+    focus: 'Learning SolidWorks & CMF',
+    sectionTitles: {
+      contextLabel: 'Context: ',
+      focusLabel: 'Focus: ',
+    },
   },
   {
     id: 'aura-circadian-desk-lamp',
@@ -226,38 +248,42 @@ export const projects: Project[] = [
     subtitle: 'Augmented reality glasses for high performance runners',
     category: 'Augmented reality glasses for high performance runners',
     year: '2024',
-    clientOrContext: 'Workspace Well-being Initiative',
-    focus: 'Learning SolidWorks and CMF',
+    clientOrContext: 'ArtCenter College of Design',
+    focus: 'Learning SolidWorks & CMF',
     coverImage: r4Image,
     detailHeroImage: r4Image,
     processImages: [gs1Image, gs2Image, ffImage],
     resultImages: [r1Image, r2Image, r3Image],
     problem: {
       title: '',
-      summary: 'Typical desk lamps provide fixed color-temperature illumination that over-stimulates cortisol production late in the evening and casts harsh shadows across reading and sketching planes.',
+      summary:
+        'When running at high intensity, checking a watch can interrupt rhythm and concentration. In long-distance races, even small navigation mistakes can have significant consequences. The challenge was to make essential information accessible without forcing the runner to look away from their surroundings.',
       points: [
         'Rigid spring-arm linkages that lose balance tension and droop over time.',
         'Unnatural blue-spike LED spectra that degrade sleep latency.',
-        'Clunky external plastic transformers taking up floor or socket space.'
-      ]
+        'Clunky external plastic transformers taking up floor or socket space.',
+      ],
     },
     whatAndWhy: {
-      what: 'AURA is a fluid counterweighted cantilever luminaire featuring gravity-governed positioning and dynamic circadian spectrum shifting.',
-      why: 'Gravity never fatigues. By balancing a brass counter-mass against an ultra-thin carbon-fiber arm, the user can glide the light head with a single fingertip touch.',
+      what: 'The aim was to create a pair of glasses that feels like a natural extension of On\'s performance driven aesthetic. The glasses display key running metrics on one side of the lens, while the other side provides a simplified view of the route and a virtual pacer. Physical buttons on each side allow the runner to toggle the different interfaces on and off, giving them control over how much information is visible while running. Two integrated cameras also enable the recording of runs.',
+      why: 'By bringing information into the runner’s natural field of view, the glasses reduce the need to break rhythm or look down at a device. The result is an experience where performance data, navigation, and recording become accessible without competing with the act of running itself.',
       decisions: [
         {
           title: 'Zero-Spring Gravity Equilibrium',
-          description: 'A solid turned brass counterweight balances the 450mm cantilevered beam smoothly across 360° of movement.'
+          description:
+            'A solid turned brass counterweight balances the 450mm cantilevered beam smoothly across 360° of movement.',
         },
         {
           title: 'Full-Spectrum Sun-Mimicking Diode Array',
-          description: 'CRI > 98 light engine transitions imperceptibly from energizing 5500K morning daylight to warm 1800K candle glow by twilight.'
+          description:
+            'CRI > 98 light engine transitions imperceptibly from energizing 5500K morning daylight to warm 1800K candle glow by twilight.',
         },
         {
           title: 'Micro-Prismatic Glare Diffuser',
-          description: 'Custom micro-honeycomb optical film ensures UGR < 12 glare-free illumination even at maximum lux.'
-        }
-      ]
+          description:
+            'Custom micro-honeycomb optical film ensures UGR < 12 glare-free illumination even at maximum lux.',
+        },
+      ],
     },
     process: {
       intro: 'Developing AURA required rigorous kinematic torque calculation and optical micro-lens refinement.',
@@ -265,53 +291,60 @@ export const projects: Project[] = [
         {
           phaseNumber: '01',
           title: 'Counterweight Physics Modeling',
-          description: 'Simulating center-of-gravity shifts across the full articulation envelope to ensure zero drift at any angle between 5° and 85°.',
+          description:
+            'Simulating center-of-gravity shifts across the full articulation envelope to ensure zero drift at any angle between 5° and 85°.',
           images: [
             {
               url: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop',
               caption: 'Balancing torque calculations plotted against arm length.',
               tag: 'Kinematic Study',
-              type: 'cad'
+              type: 'cad',
             },
             {
               url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop',
               caption: 'CNC machined pivot joints with embedded self-lubricating bronze bushings.',
               tag: 'Bearing Machining',
-              type: 'prototype'
-            }
-          ]
-        }
-      ]
+              type: 'prototype',
+            },
+          ],
+        },
+      ],
     },
     finalResult: {
-      summary: 'AURA effortlessly harmonizes mathematical kinetic precision with calm, serene light that cares for human biological rhythms.',
+      summary:
+        'AURA effortlessly harmonizes mathematical kinetic precision with calm, serene light that cares for human biological rhythms.',
       specs: [
         { label: 'Reach Radius', value: '820mm Full Articulation' },
         { label: 'CCT Range', value: '1800K to 5500K Continuous' },
         { label: 'CRI Rating', value: 'Ra 98.4 (R9 > 95)' },
-        { label: 'Finishes', value: 'Matte Anodized Slate / Mirror Brass' }
+        { label: 'Finishes', value: 'Matte Anodized Slate / Mirror Brass' },
       ],
       images: [
         {
           url: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1600&auto=format&fit=crop',
           caption: 'AURA positioned over a minimalist drafting table in late evening amber mode.',
-          aspectRatio: 'wide'
+          aspectRatio: 'wide',
         },
         {
           url: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=1600&auto=format&fit=crop',
           caption: 'Cast concrete weighted base with capacitive flush dimming slider.',
-          aspectRatio: 'wide'
-        }
-      ]
-    }
+          aspectRatio: 'wide',
+        },
+      ],
+    },
+    sectionTitles: {
+      contextLabel: 'Context: ',
+      focusLabel: 'Focus: ',
+    },
   },
   {
     id: 'vita-smart-inhaler',
     title: 'Vestre Bench',
-    subtitle: 'Modular public bench architecture engineered for circular urban longevity',
+    subtitle: 'Be private, together.',
     category: 'Urban Furniture & Public Space',
     year: '2024',
-    clientOrContext: 'Vestre / Urban Innovation',
+    clientOrContext: 'Collaboration Project with Vestre',
+    focus: 'Sustainability & Production',
     coverImage: orrCoverImage,
     processImages: [
       v9Image,
@@ -327,163 +360,181 @@ export const projects: Project[] = [
     v9TextBoxes: [
       {
         id: 'box-1',
-        text: 'Early volumetric mockups and ergonomics explorations for public space integration.',
-        width: 320,
-        x: 6,
-        y: 10,
+        title: '',
+        text: 'Our meeting with a representative from the Norwegian Association of the Blind gave us valuable insight into how a bench can be designed to be more inclusive and accessible for people with visual impairments.\n\nWe learned that the use of colour can be crucial for visibility and accessibility for people with visual impairments. We also gained a greater understanding of the importance of accessibility and ease of navigation. The bench should be designed with the intention that visually impaired users are able to find and approach it.',
+        width: 641,
+        x: 4,
+        y: 7,
         theme: 'light-glass',
-        fontSize: 'base',
+        fontSize: 'sm',
       },
       {
         id: 'box-2',
-        text: 'Evaluating durable Nordic pine slats combined with powder-coated steel framework.',
-        width: 320,
-        x: 6,
-        y: 52,
+        title: 'Material Study',
+        text: 'We had a meeting with a physiotherapist to gain insight into how a bench could be designed to be more inclusive and accessible for people with different physical challenges.\n\nThe bench needs to balance ergonomics, stability, and accessibility, making it suitable for older people, individuals with muscular discomfort, and others with mobility challenges.',
+        width: 501,
+        x: 52,
+        y: 70,
         theme: 'light-glass',
-        fontSize: 'base',
+        fontSize: 'sm',
       },
     ],
     v11TextBoxes: [
       {
         id: 'box-v11-1',
-        text: 'Form architecture and structural rib placement optimized for outdoor resilience.',
-        width: 340,
-        x: 6,
-        y: 8,
+        text: 'Several people are sitting relatively close to each other. The girls sitting on the lower level appear completely separated from the others, even though they are physically quite close to them.',
+        width: 237,
+        x: 28,
+        y: 6,
         theme: 'light-glass',
         fontSize: 'base',
       },
       {
         id: 'box-v11-2',
-        text: 'Material tolerance testing between cast aluminium anchors and Nordic pine slats.',
-        width: 340,
-        x: 52,
-        y: 8,
+        text: 'These two people are sitting very close to each other, less than half a metre apart. They both maintain a sense of personal space by facing in opposite directions.',
+        width: 205,
+        x: 77,
+        y: 68,
         theme: 'light-glass',
         fontSize: 'base',
       },
       {
         id: 'box-v11-3',
-        text: 'Modular connection details enabling fast maintenance and single-slat replacement.',
-        width: 340,
+        text: 'They maintain some distance and do not sit directly next to each other, while still being relatively close, approximately one metre apart.',
+        width: 222,
         x: 6,
-        y: 52,
+        y: 40,
         theme: 'light-glass',
         fontSize: 'base',
       },
       {
         id: 'box-v11-4',
-        text: 'Full-scale ergonomic verification under variable public seating postures.',
-        width: 340,
-        x: 52,
-        y: 52,
+        text: 'Is she turning towards the sun, or is she positioning herself that way to create more personal space?',
+        width: 198,
+        x: 31,
+        y: 72,
         theme: 'light-glass',
         fontSize: 'base',
       },
     ],
     resultImages: [v6Image, v7Image, v8Image],
     problem: {
-      title: 'Wear and Inflexible Maintenance in Public Seating',
-      summary: 'Public street furniture is subjected to heavy weather and vandalism, often leading to premature disposal due to non-modular assemblies.',
+      title: 'Social Stigma and Poor Inhalation Adherence in Public Spaces',
+      summary:
+        'Public spaces often bring people physically close together, while still leaving little room for personal space or retreat. The challenge was to explore how seating could support social interaction without removing the possibility of privacy.',
       points: [
         'Single damaged slats currently require replacing entire bench units.',
         'Poor drainage causing accelerated wood decay and moisture retention.',
-        'Rigid static layouts that fail to accommodate natural conversational clustering.'
-      ]
+        'Rigid static layouts that fail to accommodate natural conversational clustering.',
+      ],
     },
     whatAndWhy: {
-      what: 'A circular urban bench system engineered with low-carbon aluminium castings and sustainably sourced Nordic pine slats.',
-      why: 'By designing for zero-glue mechanical disassembly, individual slats can be serviced in minutes while monolithic cast brackets ensure decades of structural integrity.',
+      what: 'The system consists of two primary modules: a high module and a low module. They can be positioned side by side or front to front, creating different seating configurations depending on the surrounding space and desired degree of interaction. A durable metal frame is combined with warm wooden seating surfaces.',
+      why: 'The modular approach allows the furniture to respond to different social and spatial conditions without changing its fundamental design. At the same time, the simple construction supports efficient production, transportation, and assembly, making the system suitable for public environments.',
       decisions: [
         {
           title: 'Cast Aluminium Anchor Profile',
-          description: 'Optimized ribbed profile provides high load bearing capacity with integrated water run-off channels.'
+          description:
+            'Optimized ribbed profile provides high load bearing capacity with integrated water run-off channels.',
         },
         {
           title: 'Independent Slat Modular Fastening',
-          description: 'Sub-surface mechanical fasteners allow single-slat replacement without dismantling adjacent elements.'
+          description:
+            'Sub-surface mechanical fasteners allow single-slat replacement without dismantling adjacent elements.',
         },
         {
           title: 'Nordic Pine with Natural Patina',
-          description: 'Sustainably harvested pine with protective oil finish that weathers gracefully into an organic silver-grey.'
-        }
-      ]
+          description:
+            'Sustainably harvested pine with protective oil finish that weathers gracefully into an organic silver-grey.',
+        },
+      ],
     },
     process: {
-      intro: 'Prototyping joint tolerances, testing weight distribution, and verifying ergonomic comfort across multiple seating postures.',
-      phases: []
+      intro:
+        'Prototyping joint tolerances, testing weight distribution, and verifying ergonomic comfort across multiple seating postures.',
+      phases: [],
     },
     finalResult: {
-      summary: 'A durable, circular public seating system uniting Scandinavian craft with industrial precision.',
+      summary:
+        'A durable, circular public seating system uniting Scandinavian craft with industrial precision.',
       specs: [
         { label: 'Material', value: 'Hydro CIRCAL Recycled Aluminium & Nordic Pine' },
         { label: 'Lifecycle', value: '100% Circular / Design for Disassembly (DfD)' },
         { label: 'Coating', value: 'Solvent-free architectural powder coat' },
-        { label: 'Warranty', value: 'Lifetime structural guarantee on metal components' }
+        { label: 'Warranty', value: 'Lifetime structural guarantee on metal components' },
       ],
       images: [
         {
           url: v6Image,
           caption: 'Vestre Bench result 01.',
-          aspectRatio: 'wide'
+          aspectRatio: 'wide',
         },
         {
           url: v7Image,
           caption: 'Vestre Bench result 02.',
-          aspectRatio: 'wide'
+          aspectRatio: 'wide',
         },
         {
           url: v8Image,
           caption: 'Vestre Bench result 03.',
-          aspectRatio: 'wide'
-        }
-      ]
-    }
+          aspectRatio: 'wide',
+        },
+      ],
+    },
+    sectionTitles: {
+      contextLabel: 'Context: ',
+      focusLabel: 'Focus: ',
+    },
   },
   {
     id: 'tacta-analog-synthesizer',
     title: 'Erling Stool',
-    subtitle: 'Cast aluminum and sculpted wood seating exploring structural minimalism and tactile comfort',
+    subtitle: 'A tribute to our great Erling Braut Haaland',
     category: 'Furniture Design & Seating',
     year: '2025',
-    clientOrContext: 'Studio Exploration',
+    clientOrContext: 'The Oslo School of Architecture and Design',
+    focus: 'Sustainability & Material Integrity',
     coverImage: auraCoverImage,
     processImages: [e7Image, e2Image, e3Image],
     resultImages: [e4Image, e5Image, e6Image],
     problem: {
-      title: 'Overcomplicated Joinery and Bulky Secondary Seating',
-      summary: 'Occasional seating is frequently cumbersome to reposition, prone to loosening joinery over time, and visually dominant in intimate spaces.',
+      title: 'Digital Fatigue in Modern Music Production',
+      summary:
+        'The project began with two simple constraints: the stool had to be made entirely from wood and fit within a 50 × 50 × 50 cm volume. Rather than treating these limitations as restrictions, they became a framework for exploring proportion, structure, and construction through minimal means.',
       points: [
         'Weak joint corners vulnerable to dynamic torsional loading.',
         'Excessive material mass making informal repositioning difficult.',
-        'Lack of natural material warmth in austere industrial furniture.'
-      ]
+        'Lack of natural material warmth in austere industrial furniture.',
+      ],
     },
     whatAndWhy: {
-      what: 'Erling is a compact stackable stool combining sand-cast recycled aluminum legs with a gently contoured solid timber seat.',
-      why: 'By concentrating structural support into three interlocking cast anchors, the stool achieves maximum stability with a minimal physical and visual footprint.',
+      what: 'The goal was to create a stool that feels stable and refined while allowing its construction to become part of its character. The stool is constructed from beechwood, selected for its strength and subtle grain. Precise load-bearing connections provide the structural foundation, while walnut dowels reinforce the joints and introduce a contrasting material detail at key connection points.',
+      why: 'Rather than hiding the construction, the stool uses its joints as an integral part of the visual language. The combination of beech and walnut creates a restrained contrast, while the precise joinery allows a simple form to achieve both durability and character.',
       decisions: [
         {
           title: 'Interlocking Cast Frame',
-          description: 'High-rigidity aluminum geometry provides structural integrity while keeping the overall unit lightweight.'
+          description:
+            'High-rigidity aluminum geometry provides structural integrity while keeping the overall unit lightweight.',
         },
         {
           title: 'Ergonomic Dished Seat',
-          description: 'Subtle concave seat profile distributes body weight evenly for prolonged comfort without bulky upholstery.'
-        }
-      ]
+          description:
+            'Subtle concave seat profile distributes body weight evenly for prolonged comfort without bulky upholstery.',
+        },
+      ],
     },
     process: {
-      intro: 'Prototyping seat curvatures, testing leg taper angles, and verifying joinery tolerances under cyclical stress testing.',
+      intro:
+        'Prototyping seat curvatures, testing leg taper angles, and verifying joinery tolerances under cyclical stress testing.',
       phases: [
         {
           phaseNumber: '01',
           title: 'Joint Tolerances & Weight Distribution',
-          description: 'Refining the interface between cast metal sockets and CNC-milled timber dowels to accommodate seasonal wood movement.',
-          images: []
-        }
-      ]
+          description:
+            'Refining the interface between cast metal sockets and CNC-milled timber dowels to accommodate seasonal wood movement.',
+          images: [],
+        },
+      ],
     },
     finalResult: {
       summary: 'A robust, sculptural stool balancing Scandinavian craft honesty with industrial permanence.',
@@ -491,49 +542,58 @@ export const projects: Project[] = [
         { label: 'Materials', value: 'Sand-Cast Recycled Aluminum & Solid Nordic Oak' },
         { label: 'Weight', value: '3.4 kg' },
         { label: 'Stackability', value: 'Up to 4 units' },
-        { label: 'Finish', value: 'Raw tumbled aluminum & natural hardwax oil' }
+        { label: 'Finish', value: 'Raw tumbled aluminum & natural hardwax oil' },
       ],
-      images: []
-    }
+      images: [],
+    },
+    sectionTitles: {
+      contextLabel: 'Context: ',
+      focusLabel: 'Focus: ',
+    },
   },
   {
     id: 'kraft-ergonomic-chisel-set',
     title: 'Concrete Sculpture',
-    subtitle: 'Monolithic concrete explorations in balance, texture, and spatial weight',
+    subtitle: 'Where landscape, design, and technology meet.',
     category: 'Sculpture & Spatial Objects',
     year: '2024',
-    clientOrContext: 'Material Exploration',
+    clientOrContext: 'Design Competition by Veidekke & MIL',
+    focus: 'Technology & Surrounding Environment',
     coverImage: gzImage,
     detailHeroImage: gzImage,
     processImages: [bay1Image, bay2Image],
     resultImages: [bay3Image],
     phoneResultImages: [ba1Image, ba2Image, ba3Image],
     problem: {
-      title: 'Perceived Heaviness and Texture in Cast Objects',
-      summary: 'Concrete is commonly perceived as cold and brutalist, masking its capacity for subtle surface texture and delicate spatial balance.',
+      title: 'Repetitive Strain Injury in Fine Woodworking Crafts',
+      summary:
+        'Designed for Wilds Minne School in Kristiansand, the project explored how a 3D-printed concrete structure could respond to its surrounding landscape while creating an inviting space for people. The challenge was not only to develop the form, but also to translate it into a new method of architectural fabrication.',
       points: [
-        'Surface air voids and brittle edges in conventional mortar casting.',
-        'Lack of dynamic interaction between natural light and cast shadow planes.',
-        'Heavy unrefined massing without poetic architectural equilibrium.'
-      ]
+        'Vibration shock transmission directly into wrist joints when struck with mallets.',
+        'Handle splitting and collar detachment caused by varying workshop humidity.',
+        'Poor indexing of the bevel angle without looking directly at the timber face.',
+      ],
     },
     whatAndWhy: {
-      what: 'A series of cast ultra-high-performance concrete volumes balancing slender cantilevered planes against monolithic mass.',
-      why: 'By experimenting with micro-aggregate mixes and precision silicone mold techniques, the concrete takes on a silky, stone-like presence that invites touch.',
+      what: 'The design was inspired by the surrounding landscape and developed around an embracing form intended to create a sense of warmth and welcome. The sculpture was designed not simply as an object to look at, but as a space that people could enter, inhabit, and use.',
+      why: 'As one of the early examples of 3D-printed concrete structures in Norway, the project became an exploration of both form and fabrication. Working with multiple stakeholders also introduced the complexity of a real-world architectural project, where design development, technical constraints, and approvals continuously influence the final result.',
       decisions: [
         {
           title: 'Precision Multi-Part Tooling',
-          description: 'Flexible multi-part silicone molds yield crisp knife-edges and flawless surface density.'
+          description:
+            'Flexible multi-part silicone molds yield crisp knife-edges and flawless surface density.',
         },
         {
           title: 'Through-Body Mineral Pigmentation',
-          description: 'Integrally tinted with raw iron oxide pigments for consistent through-body tone and subtle patina.'
-        }
-      ]
+          description:
+            'Integrally tinted with raw iron oxide pigments for consistent through-body tone and subtle patina.',
+        },
+      ],
     },
     process: {
-      intro: 'Testing aggregate ratios, curing humidity chambers, and demolding timing to eliminate shrinkage and cracking.',
-      phases: []
+      intro:
+        'Testing aggregate ratios, curing humidity chambers, and demolding timing to eliminate shrinkage and cracking.',
+      phases: [],
     },
     finalResult: {
       summary: 'A study in architectural permanence, quiet balance, and material sensitivity.',
@@ -541,9 +601,13 @@ export const projects: Project[] = [
         { label: 'Material', value: 'UHPC Micro-Aggregate Cement' },
         { label: 'Finish', value: 'Honed matte with hydrophobic breathable sealant' },
         { label: 'Dimensions', value: 'Variable modular compositions' },
-        { label: 'Curing', value: '28-day water-submerged cure' }
+        { label: 'Curing', value: '28-day water-submerged cure' },
       ],
-      images: []
-    }
-  }
+      images: [],
+    },
+    sectionTitles: {
+      contextLabel: 'Context: ',
+      focusLabel: 'Focus: ',
+    },
+  },
 ];
