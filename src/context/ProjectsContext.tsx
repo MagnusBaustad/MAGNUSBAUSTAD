@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { Project } from '../types';
 import { projects as defaultProjects } from '../data/projects';
 import {
@@ -7,6 +7,7 @@ import {
   defaultAboutContent,
   defaultContactContent,
 } from '../data/siteContent';
+import { persistedData } from '../data/persistedContent';
 
 interface ProjectsContextType {
   projects: Project[];
@@ -21,6 +22,9 @@ interface ProjectsContextType {
   resetToOriginal: () => void;
   lastSaved: Date | null;
   exportAsCode: () => string;
+  syncStatus: 'idle' | 'syncing' | 'synced' | 'error';
+  syncToFiles: () => Promise<boolean>;
+  importData: (jsonStr: string) => boolean;
 }
 
 const ProjectsContext = createContext<ProjectsContextType | undefined>(undefined);
@@ -46,103 +50,190 @@ function setNestedValue(obj: any, path: (string | number)[], value: any): any {
 }
 
 export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // 1. Projects State - completely unlinked per project with deep cloning
+  // 1. Projects State - reads from localStorage, falls back to persistedData, then defaultProjects
   const [projects, setProjects] = useState<Project[]>(() => {
+    let customList: any[] | null = null;
     try {
       const saved = localStorage.getItem(PROJECTS_STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return defaultProjects.map((def) => {
-            const custom = parsed.find((p: Project) => p.id === def.id);
-            if (!custom) return JSON.parse(JSON.stringify(def));
-            const effectiveTitle = custom.title || def.title;
-            return {
-              ...JSON.parse(JSON.stringify(def)),
-              ...custom,
-              title: effectiveTitle,
-              isComingSoon: def.isComingSoon,
-              comingSoonText: (custom.comingSoonText && custom.comingSoonText.trim() !== '') ? custom.comingSoonText : 'Coming soon...',
-              coverImage: def.coverImage,
-              detailHeroImage: (custom.detailHeroImage && (custom.detailHeroImage.startsWith('data:') || custom.detailHeroImage.startsWith('blob:'))) ? custom.detailHeroImage : ((def.id === 'aura-circadian-desk-lamp' || def.id === 'kraft-ergonomic-chisel-set') ? def.detailHeroImage : (custom.detailHeroImage || def.detailHeroImage)),
-              processImages: (custom.processImages && custom.processImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
-                ? custom.processImages
-                : ((def.id === 'vita-smart-inhaler' || def.id === 'tacta-analog-synthesizer' || def.id === 'kraft-ergonomic-chisel-set' || def.id === 'rottefella-extend' || !custom.processImages || custom.processImages.length === 0) ? def.processImages : custom.processImages),
-              processImagesFullWidth: def.processImagesFullWidth ?? custom.processImagesFullWidth,
-              resultImages: (custom.resultImages && custom.resultImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
-                ? custom.resultImages
-                : ((def.id === 'vita-smart-inhaler' || def.id === 'tacta-analog-synthesizer' || def.id === 'aura-circadian-desk-lamp' || def.id === 'kraft-ergonomic-chisel-set' || def.id === 'rottefella-extend' || !custom.resultImages || custom.resultImages.length === 0) ? def.resultImages : custom.resultImages),
-              phoneResultImages: (custom.phoneResultImages && custom.phoneResultImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
-                ? custom.phoneResultImages
-                : ((def.id === 'kraft-ergonomic-chisel-set' || !custom.phoneResultImages || custom.phoneResultImages.length === 0) ? def.phoneResultImages : custom.phoneResultImages),
-              v9TextBoxes: def.id === 'vita-smart-inhaler' ? ((custom.v9TextBoxes && custom.v9TextBoxes.length > 0) ? custom.v9TextBoxes : def.v9TextBoxes) : undefined,
-              v11TextBoxes: def.id === 'vita-smart-inhaler' ? ((custom.v11TextBoxes && custom.v11TextBoxes.length > 0) ? custom.v11TextBoxes : def.v11TextBoxes) : undefined,
-              sectionTitles: {
-                ...(def.sectionTitles || {}),
-                ...(custom.sectionTitles || {}),
-                contextLabel: custom.sectionTitles?.contextLabel
-                  ? (custom.sectionTitles.contextLabel.endsWith(' ')
-                      ? custom.sectionTitles.contextLabel
-                      : `${custom.sectionTitles.contextLabel.trimEnd()} `)
-                  : 'Context: ',
-                focusLabel: custom.sectionTitles?.focusLabel
-                  ? (custom.sectionTitles.focusLabel.endsWith(' ')
-                      ? custom.sectionTitles.focusLabel
-                      : `${custom.sectionTitles.focusLabel.trimEnd()} `)
-                  : 'Focus: ',
-              },
-            };
-          });
+          customList = parsed;
         }
       }
     } catch {
-      // fallback
+      // ignore
     }
+
+    if (!customList && persistedData && Array.isArray(persistedData.projects) && persistedData.projects.length > 0) {
+      customList = persistedData.projects;
+    }
+
+    if (customList) {
+      return defaultProjects.map((def) => {
+        const custom = customList!.find((p: Project) => p.id === def.id);
+        if (!custom) return JSON.parse(JSON.stringify(def));
+        const effectiveTitle = custom.title || def.title;
+        return {
+          ...JSON.parse(JSON.stringify(def)),
+          ...custom,
+          title: effectiveTitle,
+          isComingSoon: def.isComingSoon,
+          comingSoonText: (custom.comingSoonText && custom.comingSoonText.trim() !== '') ? custom.comingSoonText : 'Coming soon...',
+          coverImage: def.coverImage,
+          detailHeroImage: (custom.detailHeroImage && (custom.detailHeroImage.startsWith('data:') || custom.detailHeroImage.startsWith('blob:'))) ? custom.detailHeroImage : ((def.id === 'aura-circadian-desk-lamp' || def.id === 'kraft-ergonomic-chisel-set') ? def.detailHeroImage : (custom.detailHeroImage || def.detailHeroImage)),
+          processImages: (custom.processImages && custom.processImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
+            ? custom.processImages
+            : ((def.id === 'vita-smart-inhaler' || def.id === 'tacta-analog-synthesizer' || def.id === 'kraft-ergonomic-chisel-set' || def.id === 'rottefella-extend' || !custom.processImages || custom.processImages.length === 0) ? def.processImages : custom.processImages),
+          processImagesFullWidth: def.processImagesFullWidth ?? custom.processImagesFullWidth,
+          resultImages: (custom.resultImages && custom.resultImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
+            ? custom.resultImages
+            : ((def.id === 'vita-smart-inhaler' || def.id === 'tacta-analog-synthesizer' || def.id === 'aura-circadian-desk-lamp' || def.id === 'kraft-ergonomic-chisel-set' || def.id === 'rottefella-extend' || !custom.resultImages || custom.resultImages.length === 0) ? def.resultImages : custom.resultImages),
+          phoneResultImages: (custom.phoneResultImages && custom.phoneResultImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
+            ? custom.phoneResultImages
+            : ((def.id === 'kraft-ergonomic-chisel-set' || !custom.phoneResultImages || custom.phoneResultImages.length === 0) ? def.phoneResultImages : custom.phoneResultImages),
+          v9TextBoxes: def.id === 'vita-smart-inhaler' ? ((custom.v9TextBoxes && custom.v9TextBoxes.length > 0) ? custom.v9TextBoxes : def.v9TextBoxes) : undefined,
+          v11TextBoxes: def.id === 'vita-smart-inhaler' ? ((custom.v11TextBoxes && custom.v11TextBoxes.length > 0) ? custom.v11TextBoxes : def.v11TextBoxes) : undefined,
+          sectionTitles: {
+            ...(def.sectionTitles || {}),
+            ...(custom.sectionTitles || {}),
+            contextLabel: custom.sectionTitles?.contextLabel
+              ? (custom.sectionTitles.contextLabel.endsWith(' ')
+                  ? custom.sectionTitles.contextLabel
+                  : `${custom.sectionTitles.contextLabel.trimEnd()} `)
+              : 'Context: ',
+            focusLabel: custom.sectionTitles?.focusLabel
+              ? (custom.sectionTitles.focusLabel.endsWith(' ')
+                  ? custom.sectionTitles.focusLabel
+                  : `${custom.sectionTitles.focusLabel.trimEnd()} `)
+              : 'Focus: ',
+          },
+        };
+      });
+    }
+
     return JSON.parse(JSON.stringify(defaultProjects));
   });
 
   // 2. About Content State
   const [aboutContent, setAboutContent] = useState<AboutContent>(() => {
+    let rawAbout: any = null;
     try {
       const saved = localStorage.getItem(ABOUT_STORAGE_KEY);
       if (saved) {
-        const parsed = JSON.parse(saved);
-        return {
-          ...defaultAboutContent,
-          ...parsed,
-          bioParagraph2: (parsed.bioParagraph2 && parsed.bioParagraph2.trim()) ? parsed.bioParagraph2 : defaultAboutContent.bioParagraph2,
-          bioParagraph3: (parsed.bioParagraph3 && parsed.bioParagraph3.trim()) ? parsed.bioParagraph3 : defaultAboutContent.bioParagraph3,
-          bioParagraph4: (parsed.bioParagraph4 && parsed.bioParagraph4.trim()) ? parsed.bioParagraph4 : defaultAboutContent.bioParagraph4,
-        };
+        rawAbout = JSON.parse(saved);
       }
     } catch {
       // fallback
+    }
+
+    if (!rawAbout && persistedData && persistedData.aboutContent) {
+      rawAbout = persistedData.aboutContent;
+    }
+
+    if (rawAbout) {
+      return {
+        ...defaultAboutContent,
+        ...rawAbout,
+        bioParagraph2: (rawAbout.bioParagraph2 && rawAbout.bioParagraph2.trim()) ? rawAbout.bioParagraph2 : defaultAboutContent.bioParagraph2,
+        bioParagraph3: (rawAbout.bioParagraph3 && rawAbout.bioParagraph3.trim()) ? rawAbout.bioParagraph3 : defaultAboutContent.bioParagraph3,
+        bioParagraph4: (rawAbout.bioParagraph4 && rawAbout.bioParagraph4.trim()) ? rawAbout.bioParagraph4 : defaultAboutContent.bioParagraph4,
+      };
     }
     return defaultAboutContent;
   });
 
   // 3. Contact Content State
   const [contactContent, setContactContent] = useState<ContactContent>(() => {
+    let rawContact: any = null;
     try {
       const saved = localStorage.getItem(CONTACT_STORAGE_KEY);
       if (saved) {
-        const parsed = JSON.parse(saved);
-        const sub = parsed.subheadline;
-        const needsUpdate = !sub || (typeof sub === 'string' && sub.includes('Currently available for select') && sub.split('\n').length < 3);
-        return {
-          ...defaultContactContent,
-          ...parsed,
-          subheadline: needsUpdate ? defaultContactContent.subheadline : sub,
-        };
+        rawContact = JSON.parse(saved);
       }
     } catch {
       // fallback
+    }
+
+    if (!rawContact && persistedData && persistedData.contactContent) {
+      rawContact = persistedData.contactContent;
+    }
+
+    if (rawContact) {
+      const sub = rawContact.subheadline;
+      const needsUpdate = !sub || (typeof sub === 'string' && sub.includes('Currently available for select') && sub.split('\n').length < 3);
+      return {
+        ...defaultContactContent,
+        ...rawContact,
+        subheadline: needsUpdate ? defaultContactContent.subheadline : sub,
+      };
     }
     return defaultContactContent;
   });
 
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
+  const [syncStatus, setSyncStatus] = useState<'idle' | 'syncing' | 'synced' | 'error'>('idle');
+  const syncTimeoutRef = useRef<any>(null);
+
+  // Sync current data to backend files (/api/sync-content)
+  const syncToFiles = async (
+    overrideProjects?: Project[],
+    overrideAbout?: AboutContent,
+    overrideContact?: ContactContent
+  ): Promise<boolean> => {
+    setSyncStatus('syncing');
+    try {
+      const p = overrideProjects || projects;
+      const a = overrideAbout || aboutContent;
+      const c = overrideContact || contactContent;
+
+      const res = await fetch('/api/sync-content', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          projects: p,
+          aboutContent: a,
+          contactContent: c,
+          lastUpdated: new Date().toISOString(),
+        }),
+      });
+
+      if (res.ok) {
+        setSyncStatus('synced');
+        return true;
+      } else {
+        setSyncStatus('error');
+        return false;
+      }
+    } catch {
+      // fetch may fail if static or offline
+      setSyncStatus('idle');
+      return false;
+    }
+  };
+
+  // Schedule background sync to files
+  const scheduleSync = (
+    updatedProjects?: Project[],
+    updatedAbout?: AboutContent,
+    updatedContact?: ContactContent
+  ) => {
+    if (syncTimeoutRef.current) {
+      clearTimeout(syncTimeoutRef.current);
+    }
+    syncTimeoutRef.current = setTimeout(() => {
+      syncToFiles(updatedProjects, updatedAbout, updatedContact);
+    }, 1000);
+  };
+
+  // Initial mount auto-sync: persists whatever is currently in state / localStorage
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      syncToFiles();
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Keyboard shortcut: Cmd+E or Ctrl+E to toggle edit mode
   useEffect(() => {
@@ -179,6 +270,7 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       } catch (err) {
         console.error('Failed to save projects to localStorage', err);
       }
+      scheduleSync(updated, undefined, undefined);
       return updated;
     });
   };
@@ -193,6 +285,7 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       } catch (err) {
         console.error('Failed to save about content to localStorage', err);
       }
+      scheduleSync(undefined, updated, undefined);
       return updated;
     });
   };
@@ -207,8 +300,34 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       } catch (err) {
         console.error('Failed to save contact content to localStorage', err);
       }
+      scheduleSync(undefined, undefined, updated);
       return updated;
     });
+  };
+
+  // Import JSON snapshot
+  const importData = (jsonStr: string): boolean => {
+    try {
+      const parsed = JSON.parse(jsonStr);
+      if (parsed.projects && Array.isArray(parsed.projects)) {
+        setProjects(parsed.projects);
+        localStorage.setItem(PROJECTS_STORAGE_KEY, JSON.stringify(parsed.projects));
+      }
+      if (parsed.aboutContent) {
+        setAboutContent(parsed.aboutContent);
+        localStorage.setItem(ABOUT_STORAGE_KEY, JSON.stringify(parsed.aboutContent));
+      }
+      if (parsed.contactContent) {
+        setContactContent(parsed.contactContent);
+        localStorage.setItem(CONTACT_STORAGE_KEY, JSON.stringify(parsed.contactContent));
+      }
+      setLastSaved(new Date());
+      syncToFiles(parsed.projects, parsed.aboutContent, parsed.contactContent);
+      return true;
+    } catch (err) {
+      console.error('Failed to parse import data', err);
+      return false;
+    }
   };
 
   // Reset all to defaults
@@ -222,6 +341,7 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setAboutContent(defaultAboutContent);
     setContactContent(defaultContactContent);
     setLastSaved(new Date());
+    syncToFiles(defaultProjects, defaultAboutContent, defaultContactContent);
   };
 
   // Export updated content as TypeScript code
@@ -260,6 +380,9 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         resetToOriginal,
         lastSaved,
         exportAsCode,
+        syncStatus,
+        syncToFiles,
+        importData,
       }}
     >
       {children}
@@ -274,3 +397,4 @@ export const useProjects = (): ProjectsContextType => {
   }
   return context;
 };
+

@@ -126,43 +126,43 @@ export const projects: Project[] = [
   {
     id: 'lumen-modular-kettle',
     title: 'Focus Watch',
-    subtitle: 'A circular boiling appliance with 100% user-replaceable heating components',
-    category: 'Home Appliances & Circular Design',
+    subtitle: 'A distilled timepiece balancing mechanical presence with distraction-free utility',
+    category: 'Wearable Technology & Horology',
     year: '2024',
-    clientOrContext: 'Sustainable Living Studio',
+    clientOrContext: 'Independent Exploration',
     coverImage: lumenCoverImage,
     coverImageClassName: '!object-[50%_75%]',
     processImages: [k1Image, k2Image],
     resultImages: [p1Image, p2Image, p3Image],
     problem: {
-      title: 'The 2-Year Planned Obsolescence of Small Domestic Appliances',
-      summary: 'Electric kettles are among the highest-turnover e-waste categories worldwide. When a simple resistive heating coil scales or fails, the entire injection-molded plastic vessel is discarded.',
+      title: 'Notification Overload and Digital Fatigue in Modern Wearables',
+      summary: 'Modern smartwatches create perpetual interruptions and screen dependency, eroding intentional focus and time consciousness.',
       points: [
-        'Microplastic leaching caused by boiling water repeatedly in polypropylene tanks.',
-        'Permanent ultrasonic welding that prevents heating element inspection or descaling.',
-        'Awkward pour geometry leading to wrist strain and splashing hot water.'
+        'Constant haptic alerts that fracture deep creative focus.',
+        'Fragile glass touchscreens requiring constant battery recharges.',
+        'Disposable consumer electronics lifecycles with non-serviceable components.'
       ]
     },
     whatAndWhy: {
-      what: 'LUMEN is an induction-ready borosilicate glass and pressed 316 stainless steel kettle with an open-source decoupled heating base.',
-      why: 'Separating the thermal element from the fluid vessel eliminates mineral calcification entrapment and guarantees that the contact vessel will outlive its electronics by decades.',
+      what: 'Focus Watch is a mechanical-digital hybrid timepiece crafted from brushed 316L stainless steel and sapphire crystal, engineered for intentional living.',
+      why: 'By prioritizing high-contrast physical hands over glowing notifications, the wearer regains calm ownership over their daily hours.',
       decisions: [
         {
-          title: 'Thermal Glass Body',
-          description: 'High-purity laboratory-grade borosilicate prevents taste contamination and visually indicates water level naturally without micro-tubes.'
+          title: 'Monolithic Steel Case',
+          description: 'CNC-milled 316L stainless steel provides high corrosion resistance, durability, and satisfying wrist presence.'
         },
         {
-          title: 'Precision Pour Spout',
-          description: 'Calculated gooseneck spout curve allows micro-metered pour-over flow without drips or laminar turbulence.'
+          title: 'High-Legibility Dial Architecture',
+          description: 'Subtle laser-etched indexes and matte markers optimized for instantaneous reading under all lighting conditions.'
         },
         {
-          title: 'Cold-Touch Cast Wooden Handle',
-          description: 'Ergonomic FSC-certified Nordic ash handle designed with an offset balance point for zero counter-torque on wrists.'
+          title: 'Tool-Free Quick-Release Lugs',
+          description: 'Integrated spring-bar system enabling seamless strap swaps across vegetable-tanned leather and woven nylon.'
         }
       ]
     },
     process: {
-      intro: 'Prototyping focused heavily on hydrodynamic pour tests, fluid thermodynamics, and modular disassembly tolerances.',
+      intro: 'Iterating case ergonomics, crown knurling patterns, and lug angles to achieve balanced wrist comfort across various wrist sizes.',
       phases: [
         {
           phaseNumber: '01',
@@ -308,10 +308,10 @@ export const projects: Project[] = [
   {
     id: 'vita-smart-inhaler',
     title: 'Vestre Bench',
-    subtitle: 'Destigmatizing chronic respiratory therapy through discreet human-centric form',
-    category: 'Medical Devices & Healthcare',
+    subtitle: 'Modular public bench architecture engineered for circular urban longevity',
+    category: 'Urban Furniture & Public Space',
     year: '2024',
-    clientOrContext: 'Health Tech Incubator Collaboration',
+    clientOrContext: 'Vestre / Urban Innovation',
     coverImage: orrCoverImage,
     processImages: [
       v9Image,
@@ -384,43 +384,43 @@ export const projects: Project[] = [
     ],
     resultImages: [v6Image, v7Image, v8Image],
     problem: {
-      title: 'Social Stigma and Poor Inhalation Adherence in Public Spaces',
-      summary: 'Standard clinical metered-dose inhalers have remained virtually unchanged since the 1970s. Their loud, jarring institutional aesthetics make younger patients avoid using life-saving medication around peers.',
+      title: 'Wear and Inflexible Maintenance in Public Seating',
+      summary: 'Public street furniture is subjected to heavy weather and vandalism, often leading to premature disposal due to non-modular assemblies.',
       points: [
-        'Over 60% of patients fail to coordinate actuator press with deep lung inhalation.',
-        'High incidence of forgotten doses due to lack of discreet usage tracking.',
-        'Unsanitary mouthpiece exposure when carried loose in pockets or bags.'
+        'Single damaged slats currently require replacing entire bench units.',
+        'Poor drainage causing accelerated wood decay and moisture retention.',
+        'Rigid static layouts that fail to accommodate natural conversational clustering.'
       ]
     },
     whatAndWhy: {
-      what: 'VITA is an ultra-compact, tactilely warm aerosol inhaler with an integrated twist-to-reveal hygienic cap and gentle haptic inhalation coaching.',
-      why: 'By designing VITA like an exquisite pocket stone rather than a piece of clinical hospital equipment, psychological barriers disappear and therapeutic compliance jumps significantly.',
+      what: 'A circular urban bench system engineered with low-carbon aluminium castings and sustainably sourced Nordic pine slats.',
+      why: 'By designing for zero-glue mechanical disassembly, individual slats can be serviced in minutes while monolithic cast brackets ensure decades of structural integrity.',
       decisions: [
         {
-          title: 'Twist-Lock Hygienic Shroud',
-          description: 'A 90° twisting collar seamlessly conceals the mouthpiece, keeping lint and dirt away without fragile detached caps.'
+          title: 'Cast Aluminium Anchor Profile',
+          description: 'Optimized ribbed profile provides high load bearing capacity with integrated water run-off channels.'
         },
         {
-          title: 'Breath-Actuated Micro-Vibration',
-          description: 'A silent internal air-flow sensor delivers a gentle haptic pulse when the user reaches the optimal 5-second breath intake velocity.'
+          title: 'Independent Slat Modular Fastening',
+          description: 'Sub-surface mechanical fasteners allow single-slat replacement without dismantling adjacent elements.'
         },
         {
-          title: 'Warm Biocompatible Touch',
-          description: 'Silky, soft-touch recycled medical-grade polymer with gentle ergonomic contours that fit naturally into the palm.'
+          title: 'Nordic Pine with Natural Patina',
+          description: 'Sustainably harvested pine with protective oil finish that weathers gracefully into an organic silver-grey.'
         }
       ]
     },
     process: {
-      intro: 'Extensive user research with 28 asthma and COPD patients in Oslo, analyzing pocket ergonomics and grip accessibility for diverse ages.',
+      intro: 'Prototyping joint tolerances, testing weight distribution, and verifying ergonomic comfort across multiple seating postures.',
       phases: []
     },
     finalResult: {
-      summary: 'VITA represents the future of compassionate medical hardware: humanizing clinical technology and empowering patients with dignity.',
+      summary: 'A durable, circular public seating system uniting Scandinavian craft with industrial precision.',
       specs: [
-        { label: 'Battery Life', value: '45 Days on USB-C Fast Charge' },
-        { label: 'Weight', value: '42 grams (with standard canister)' },
-        { label: 'Dose Tracking', value: 'Low-energy Bluetooth telemetry' },
-        { label: 'Biocompatibility', value: 'ISO 10993 Certified Medical Polymer' }
+        { label: 'Material', value: 'Hydro CIRCAL Recycled Aluminium & Nordic Pine' },
+        { label: 'Lifecycle', value: '100% Circular / Design for Disassembly (DfD)' },
+        { label: 'Coating', value: 'Solvent-free architectural powder coat' },
+        { label: 'Warranty', value: 'Lifetime structural guarantee on metal components' }
       ],
       images: [
         {
@@ -444,53 +444,54 @@ export const projects: Project[] = [
   {
     id: 'tacta-analog-synthesizer',
     title: 'Erling Stool',
-    subtitle: 'A sensory music machine eliminating digital screens for pure tactile sonic flow',
-    category: 'Electronic Musical Instruments',
+    subtitle: 'Cast aluminum and sculpted wood seating exploring structural minimalism and tactile comfort',
+    category: 'Furniture Design & Seating',
     year: '2025',
-    clientOrContext: 'Independent Audio Research',
+    clientOrContext: 'Studio Exploration',
     coverImage: auraCoverImage,
     processImages: [e7Image, e2Image, e3Image],
     resultImages: [e4Image, e5Image, e6Image],
     problem: {
-      title: 'Digital Fatigue in Modern Music Production',
-      summary: 'Electronic music creation has become trapped inside computer monitors, nested menu trees, and mouse-clicking interfaces that suffocate spontaneity and musical muscle memory.',
+      title: 'Overcomplicated Joinery and Bulky Secondary Seating',
+      summary: 'Occasional seating is frequently cumbersome to reposition, prone to loosening joinery over time, and visually dominant in intimate spaces.',
       points: [
-        'Zero tactile memory when navigating virtual software synthesizer plugins.',
-        'Visual distraction from endless software waveforms rather than listening with ears.',
-        'Flimsy plastic knobs with wobble and low rotational resistance.'
+        'Weak joint corners vulnerable to dynamic torsional loading.',
+        'Excessive material mass making informal repositioning difficult.',
+        'Lack of natural material warmth in austere industrial furniture.'
       ]
     },
     whatAndWhy: {
-      what: 'TACTA is a 6-voice analog polyphonic synthesizer featuring custom-machined stepped dials, cherry wood side cheeks, and tactile magnetic rocker switches.',
-      why: 'By allocating one physical control per sound parameter and eliminating the screen entirely, the musician builds an intimate physical dialogue with sound.',
+      what: 'Erling is a compact stackable stool combining sand-cast recycled aluminum legs with a gently contoured solid timber seat.',
+      why: 'By concentrating structural support into three interlocking cast anchors, the stool achieves maximum stability with a minimal physical and visual footprint.',
       decisions: [
         {
-          title: 'One-Knob-Per-Function Architecture',
-          description: 'No hidden sub-menus, no modifier shift keys. What you see is exactly what you hear.'
+          title: 'Interlocking Cast Frame',
+          description: 'High-rigidity aluminum geometry provides structural integrity while keeping the overall unit lightweight.'
         },
         {
-          title: 'Weight-Balanced Anodized Knobs',
-          description: 'Solid aluminum dials machined with calibrated thumb notches for blind micro-adjustments on dark stages.'
+          title: 'Ergonomic Dished Seat',
+          description: 'Subtle concave seat profile distributes body weight evenly for prolonged comfort without bulky upholstery.'
         }
       ]
     },
     process: {
-      intro: 'Prototyping audio circuits on breadboards and developing mechanical switch tactile detents over several iteration cycles.',
+      intro: 'Prototyping seat curvatures, testing leg taper angles, and verifying joinery tolerances under cyclical stress testing.',
       phases: [
         {
           phaseNumber: '01',
-          title: 'Front-Panel Spatial Architecture',
-          description: 'Structuring signal flow from left (Oscillators) to center (Filters) to right (Envelopes and FX) following natural human reading direction.',
+          title: 'Joint Tolerances & Weight Distribution',
+          description: 'Refining the interface between cast metal sockets and CNC-milled timber dowels to accommodate seasonal wood movement.',
           images: []
         }
       ]
     },
     finalResult: {
-      summary: 'TACTA has been adopted by studio producers worldwide as an antidote to screen exhaustion, celebrated as an heirloom instrument for generations.',
+      summary: 'A robust, sculptural stool balancing Scandinavian craft honesty with industrial permanence.',
       specs: [
-        { label: 'Architecture', value: 'Discrete 6-Voice Analog Voltage-Controlled Synthesizer' },
-        { label: 'Controls', value: '48 Solid Machined Knobs, 16 Magnetic Rockers' },
-        { label: 'Chassis', value: 'Matte Black Powder-Coated Steel with Oiled Walnut Sides' }
+        { label: 'Materials', value: 'Sand-Cast Recycled Aluminum & Solid Nordic Oak' },
+        { label: 'Weight', value: '3.4 kg' },
+        { label: 'Stackability', value: 'Up to 4 units' },
+        { label: 'Finish', value: 'Raw tumbled aluminum & natural hardwax oil' }
       ],
       images: []
     }
@@ -508,65 +509,41 @@ export const projects: Project[] = [
     resultImages: [bay3Image],
     phoneResultImages: [ba1Image, ba2Image, ba3Image],
     problem: {
-      title: 'Repetitive Strain Injury in Fine Woodworking Crafts',
-      summary: 'Woodworkers spend hundreds of hours paring end-grain and cutting dovetails. Standard round or octagonal handles cause intense pressure points on the thenar eminence of the hand.',
+      title: 'Perceived Heaviness and Texture in Cast Objects',
+      summary: 'Concrete is commonly perceived as cold and brutalist, masking its capacity for subtle surface texture and delicate spatial balance.',
       points: [
-        'Vibration shock transmission directly into wrist joints when struck with mallets.',
-        'Handle splitting and collar detachment caused by varying workshop humidity.',
-        'Poor indexing of the bevel angle without looking directly at the timber face.'
+        'Surface air voids and brittle edges in conventional mortar casting.',
+        'Lack of dynamic interaction between natural light and cast shadow planes.',
+        'Heavy unrefined massing without poetic architectural equilibrium.'
       ]
     },
     whatAndWhy: {
-      what: 'KRAFT is a set of four bench chisels pairing hand-forged O1 high-carbon tool steel with an asymmetric biocomposite lignin handle.',
-      why: 'The cross-section subtly flattens at the thumb index point, enabling the artisan to sense the exact blade angle tactilely without breaking visual concentration.',
+      what: 'A series of cast ultra-high-performance concrete volumes balancing slender cantilevered planes against monolithic mass.',
+      why: 'By experimenting with micro-aggregate mixes and precision silicone mold techniques, the concrete takes on a silky, stone-like presence that invites touch.',
       decisions: [
         {
-          title: 'Asymmetric Thumb Shelf',
-          description: 'A sculpted thumb rest transitions seamlessly into a palm swell, distributing paring pressure across 300% more contact area.'
+          title: 'Precision Multi-Part Tooling',
+          description: 'Flexible multi-part silicone molds yield crisp knife-edges and flawless surface density.'
         },
         {
-          title: 'Integrated Damping Core',
-          description: 'A high-density elastomer layer inside the brass strike-hoop absorbs high-frequency mallet shock before it reaches the carpals.'
+          title: 'Through-Body Mineral Pigmentation',
+          description: 'Integrally tinted with raw iron oxide pigments for consistent through-body tone and subtle patina.'
         }
       ]
     },
     process: {
-      intro: 'Developed in dialogue with master timber joiners in Gudbrandsdalen, balancing ancient Norwegian forging techniques with computational grip mapping.',
-      phases: [
-        {
-          phaseNumber: '01',
-          title: 'Hand Pressure Mapping',
-          description: 'Utilizing dynamic capacitive pressure glove sensors during intense dovetail cutting sessions to map peak stress points.',
-          images: [
-            {
-              url: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop',
-              caption: 'Tactile pressure gradient map overlaid onto clay handle impressions.',
-              tag: 'Grip Study',
-              type: 'sketch'
-            }
-          ]
-        }
-      ]
+      intro: 'Testing aggregate ratios, curing humidity chambers, and demolding timing to eliminate shrinkage and cracking.',
+      phases: []
     },
     finalResult: {
-      summary: 'KRAFT restores dignity and pain-free longevity to manual joinery, celebrated for both its ergonomic mastery and timeless toolroom aesthetic.',
+      summary: 'A study in architectural permanence, quiet balance, and material sensitivity.',
       specs: [
-        { label: 'Blade Steel', value: 'Cryogenically Quenched O1 Tool Steel (61-62 HRC)' },
-        { label: 'Sizes', value: '6mm, 12mm, 18mm, 25mm' },
-        { label: 'Handle Material', value: 'Flax-reinforced Biocomposite & Turned Brass Hoop' }
+        { label: 'Material', value: 'UHPC Micro-Aggregate Cement' },
+        { label: 'Finish', value: 'Honed matte with hydrophobic breathable sealant' },
+        { label: 'Dimensions', value: 'Variable modular compositions' },
+        { label: 'Curing', value: '28-day water-submerged cure' }
       ],
-      images: [
-        {
-          url: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=1600&auto=format&fit=crop',
-          caption: 'KRAFT set resting on workbench with hand-planed spruce shavings.',
-          aspectRatio: 'wide'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?q=80&w=1600&auto=format&fit=crop',
-          caption: 'Detail of cryogenic blade ground to 25° primary with 30° micro-bevel.',
-          aspectRatio: 'wide'
-        }
-      ]
+      images: []
     }
   }
 ];

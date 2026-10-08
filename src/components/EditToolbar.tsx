@@ -11,6 +11,9 @@ import {
   FileText,
   Briefcase,
   Mail,
+  UploadCloud,
+  CheckCircle2,
+  RefreshCw,
 } from 'lucide-react';
 
 export const EditToolbar: React.FC = () => {
@@ -26,12 +29,15 @@ export const EditToolbar: React.FC = () => {
     updateContactContent,
     projects,
     updateField,
+    syncStatus,
+    syncToFiles,
+    importData,
   } = useProjects();
 
   const [copied, setCopied] = useState(false);
-  const [showCodeModal, setShowCodeModal] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showQuickEditor, setShowQuickEditor] = useState(false);
+  const [showDeploySuccess, setShowDeploySuccess] = useState(false);
   const [editorTab, setEditorTab] = useState<'about' | 'contact' | 'projects'>('about');
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
@@ -41,6 +47,14 @@ export const EditToolbar: React.FC = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     });
+  };
+
+  const handleManualSync = async () => {
+    const ok = await syncToFiles();
+    if (ok) {
+      setShowDeploySuccess(true);
+      setTimeout(() => setShowDeploySuccess(false), 5000);
+    }
   };
 
   const handleReset = () => {
@@ -98,6 +112,31 @@ export const EditToolbar: React.FC = () => {
                 Saved {lastSaved.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
               </span>
             )}
+
+            {/* Save for Vercel Deploy Button */}
+            <button
+              onClick={handleManualSync}
+              disabled={syncStatus === 'syncing'}
+              className="flex items-center gap-1.5 px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full transition-colors cursor-pointer text-[11px] uppercase tracking-wider font-semibold shadow-xs"
+              title="Save all changes to codebase files for Vercel deployment"
+            >
+              {syncStatus === 'syncing' ? (
+                <>
+                  <RefreshCw className="w-3 h-3 animate-spin text-white" />
+                  <span>Saving...</span>
+                </>
+              ) : syncStatus === 'synced' ? (
+                <>
+                  <CheckCircle2 className="w-3 h-3 text-white" />
+                  <span>Saved to Code!</span>
+                </>
+              ) : (
+                <>
+                  <UploadCloud className="w-3 h-3 text-white" />
+                  <span>Save for Deploy</span>
+                </>
+              )}
+            </button>
 
             {/* Copy / Export Code Button */}
             <button
@@ -564,6 +603,31 @@ export const EditToolbar: React.FC = () => {
               </button>
             </div>
           </div>
+        </div>
+      )}
+      {/* Deploy Sync Success Notification */}
+      {showDeploySuccess && (
+        <div
+          className="fixed top-6 right-6 z-50 bg-neutral-900 border border-emerald-500/50 text-white rounded-lg p-4 shadow-2xl max-w-sm flex items-start gap-3 animate-in fade-in slide-in-from-top-4 duration-300"
+          role="alert"
+        >
+          <div className="p-1 bg-emerald-500/20 rounded-full text-emerald-400 shrink-0 mt-0.5">
+            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+          </div>
+          <div className="flex-1">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-0.5">
+              Saved for Deployment!
+            </h4>
+            <p className="text-xs text-neutral-300 leading-relaxed">
+              All preview texts, descriptions, and overlay box positions have been written directly to the project files. You can now push to GitHub and deploy to Vercel!
+            </p>
+          </div>
+          <button
+            onClick={() => setShowDeploySuccess(false)}
+            className="text-neutral-400 hover:text-white p-1"
+          >
+            <X className="w-4 h-4" />
+          </button>
         </div>
       )}
     </>
