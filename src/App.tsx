@@ -8,6 +8,53 @@ import { Contact } from './components/Contact';
 import { ProjectsProvider, useProjects } from './context/ProjectsContext';
 import { EditToolbar } from './components/EditToolbar';
 
+const PROJECT_SLUG_MAP: Record<string, string> = {
+  'rottefella-extend': 'rottefellamove',
+  'lumen-modular-kettle': 'focuswatch',
+  'aura-circadian-desk-lamp': 'arglasses',
+  'vita-smart-inhaler': 'vestrebench',
+  'tacta-analog-synthesizer': 'erligstool',
+  'kraft-ergonomic-chisel-set': 'concretesculpture',
+};
+
+const SLUG_TO_ID_MAP: Record<string, string> = {
+  // Canonical slugs requested by user
+  'rottefellamove': 'rottefella-extend',
+  'focuswatch': 'lumen-modular-kettle',
+  'arglasses': 'aura-circadian-desk-lamp',
+  'vestrebench': 'vita-smart-inhaler',
+  'erligstool': 'tacta-analog-synthesizer',
+  'erlingstool': 'tacta-analog-synthesizer',
+  'concretesculpture': 'kraft-ergonomic-chisel-set',
+  'concrete sculpture': 'kraft-ergonomic-chisel-set',
+  'concrete%20sculpture': 'kraft-ergonomic-chisel-set',
+  'concrete-sculpture': 'kraft-ergonomic-chisel-set',
+
+  // Hyphenated variants
+  'rottefella-move': 'rottefella-extend',
+  'focus-watch': 'lumen-modular-kettle',
+  'ar-glasses': 'aura-circadian-desk-lamp',
+  'vestre-bench': 'vita-smart-inhaler',
+  'erling-stool': 'tacta-analog-synthesizer',
+  'erlig-stool': 'tacta-analog-synthesizer',
+
+  // Internal ID fallback
+  'rottefella-extend': 'rottefella-extend',
+  'lumen-modular-kettle': 'lumen-modular-kettle',
+  'aura-circadian-desk-lamp': 'aura-circadian-desk-lamp',
+  'vita-smart-inhaler': 'vita-smart-inhaler',
+  'tacta-analog-synthesizer': 'tacta-analog-synthesizer',
+  'kraft-ergonomic-chisel-set': 'kraft-ergonomic-chisel-set',
+};
+
+function resolveProjectId(raw: string): string {
+  const decoded = decodeURIComponent(raw).trim().toLowerCase();
+  if (SLUG_TO_ID_MAP[decoded]) return SLUG_TO_ID_MAP[decoded];
+  const normalized = decoded.replace(/[\s\-_]+/g, '');
+  if (SLUG_TO_ID_MAP[normalized]) return SLUG_TO_ID_MAP[normalized];
+  return decoded;
+}
+
 function AppContent() {
   const { projects } = useProjects();
   const [currentPage, setCurrentPage] = useState<PageType>('design');
@@ -18,12 +65,16 @@ function AppContent() {
     const handleHashChange = () => {
       const hash = window.location.hash.replace(/^#\/?/, '');
       if (hash.startsWith('project/')) {
-        const pId = hash.replace('project/', '');
-        const exists = projects.some((p) => p.id === pId);
+        const rawSlug = hash.replace('project/', '');
+        const pId = resolveProjectId(rawSlug);
+        const exists = projects.some((p) => p.id === pId || p.slug === rawSlug || p.id === rawSlug);
         if (exists) {
-          setSelectedProjectId(pId);
-          setCurrentPage('design');
-          return;
+          const matched = projects.find((p) => p.id === pId || p.slug === rawSlug || p.id === rawSlug);
+          if (matched) {
+            setSelectedProjectId(matched.id);
+            setCurrentPage('design');
+            return;
+          }
         }
       }
 
@@ -53,7 +104,8 @@ function AppContent() {
 
   const handleSelectProject = (projectId: string) => {
     setSelectedProjectId(projectId);
-    window.location.hash = `#/project/${projectId}`;
+    const slug = PROJECT_SLUG_MAP[projectId] || projectId;
+    window.location.hash = `#/project/${slug}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

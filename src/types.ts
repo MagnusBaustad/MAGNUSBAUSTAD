@@ -57,6 +57,7 @@ export interface ImageOverlayTextBox {
 
 export interface Project {
   id: string;
+  slug?: string;
   title: string;
   subtitle: string;
   category: string;

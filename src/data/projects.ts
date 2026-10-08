@@ -66,6 +66,7 @@ import ty7Image from '../assets/images/Ty7.png';
 export const projects: Project[] = [
   {
     id: 'rottefella-extend',
+    slug: 'rottefellamove',
     title: 'Rottefella Move',
     subtitle: 'A micro-adjustable bike stem for gravel cyclists',
     category: 'Sports Equipment & Ergonomics',
@@ -136,6 +137,7 @@ export const projects: Project[] = [
   },
   {
     id: 'lumen-modular-kettle',
+    slug: 'focuswatch',
     title: 'Focus Watch',
     subtitle: 'Experience time, don’t measure it',
     category: 'Home Appliances & Circular Design',
@@ -248,6 +250,7 @@ export const projects: Project[] = [
   },
   {
     id: 'aura-circadian-desk-lamp',
+    slug: 'arglasses',
     title: 'AR Glasses',
     subtitle: 'Augmented reality glasses for high performance runners',
     category: 'Augmented reality glasses for high performance runners',
@@ -344,6 +347,7 @@ export const projects: Project[] = [
   },
   {
     id: 'vita-smart-inhaler',
+    slug: 'vestrebench',
     title: 'Vestre Bench',
     subtitle: 'Be private, together.',
     category: 'Urban Furniture & Public Space',
@@ -495,6 +499,7 @@ export const projects: Project[] = [
   },
   {
     id: 'tacta-analog-synthesizer',
+    slug: 'erligstool',
     title: 'Erling Stool',
     subtitle: 'A tribute to our great Erling Braut Haaland',
     category: 'Furniture Design & Seating',
@@ -562,6 +567,7 @@ export const projects: Project[] = [
   },
   {
     id: 'kraft-ergonomic-chisel-set',
+    slug: 'concretesculpture',
     title: 'Concrete Sculpture',
     subtitle: 'Where landscape, design, and technology meet.',
     category: 'Sculpture & Spatial Objects',

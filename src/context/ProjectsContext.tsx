@@ -91,6 +91,7 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           title: effectiveTitle,
           isComingSoon: def.isComingSoon,
           comingSoonText: (custom.comingSoonText && custom.comingSoonText.trim() !== '') ? custom.comingSoonText : 'Coming soon...',
+          slug: custom.slug || def.slug,
           projectType: custom.projectType || def.projectType,
           focus: custom.focus || def.focus,
           clientOrContext: custom.clientOrContext || def.clientOrContext,

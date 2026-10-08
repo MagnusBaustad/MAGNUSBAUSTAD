@@ -15,6 +15,7 @@ export const persistedData: {
       "clientOrContext": "Collaboration Project with Rottefella",
       "projectType": "Individual Project",
       "coverImage": "/src/assets/images/R9.jpg",
+      "detailHeroImage": "/src/assets/images/R9.jpg",
       "coverImageClassName": "",
       "processImages": [
         "/src/assets/images/TY1.png",
@@ -103,8 +104,8 @@ export const persistedData: {
       "processDescription": "",
       "resultDescription": "",
       "comingSoonText": "Coming soon...",
-      "detailHeroImage": "/src/assets/images/R9.jpg",
-      "phoneResultImages": []
+      "phoneResultImages": [],
+      "slug": "rottefellamove"
     },
     {
       "id": "lumen-modular-kettle",
@@ -115,6 +116,7 @@ export const persistedData: {
       "clientOrContext": "ArtCenter College of Design",
       "projectType": "Individual Project",
       "coverImage": "/src/assets/images/H5.png",
+      "detailHeroImage": "/src/assets/images/H5.png",
       "coverImageClassName": "!object-[50%_75%]",
       "processImages": [
         "/src/assets/images/K1.png",
@@ -230,8 +232,8 @@ export const persistedData: {
       "processDescription": "",
       "resultDescription": "",
       "comingSoonText": "Coming soon...",
-      "detailHeroImage": "/src/assets/images/H5.png",
-      "phoneResultImages": []
+      "phoneResultImages": [],
+      "slug": "focuswatch"
     },
     {
       "id": "aura-circadian-desk-lamp",
@@ -345,7 +347,8 @@ export const persistedData: {
       "processDescription": "",
       "resultDescription": "",
       "comingSoonText": "Coming soon...",
-      "phoneResultImages": []
+      "phoneResultImages": [],
+      "slug": "arglasses"
     },
     {
       "id": "vita-smart-inhaler",
@@ -357,6 +360,7 @@ export const persistedData: {
       "focus": "Sustainability & Production",
       "projectType": "Collaboration Project",
       "coverImage": "/src/assets/images/Orr.png",
+      "detailHeroImage": "/src/assets/images/Orr.png",
       "processImages": [
         "/src/assets/images/V9.jpg",
         "/src/assets/images/V11.jpg",
@@ -518,8 +522,8 @@ export const persistedData: {
       "processDescription": "",
       "resultDescription": "",
       "comingSoonText": "Coming soon...",
-      "detailHeroImage": "/src/assets/images/Orr.png",
-      "phoneResultImages": []
+      "phoneResultImages": [],
+      "slug": "vestrebench"
     },
     {
       "id": "tacta-analog-synthesizer",
@@ -531,6 +535,7 @@ export const persistedData: {
       "focus": "Sustainability & Material Integrity",
       "projectType": "Individual Project",
       "coverImage": "/src/assets/images/H2.png",
+      "detailHeroImage": "/src/assets/images/H2.png",
       "processImages": [
         "/src/assets/images/E7.png",
         "/src/assets/images/E2.jpg",
@@ -618,8 +623,8 @@ export const persistedData: {
       "processDescription": "",
       "resultDescription": "",
       "comingSoonText": "Coming soon...",
-      "detailHeroImage": "/src/assets/images/H2.png",
-      "phoneResultImages": []
+      "phoneResultImages": [],
+      "slug": "erligstool"
     },
     {
       "id": "kraft-ergonomic-chisel-set",
@@ -720,7 +725,8 @@ export const persistedData: {
       },
       "processDescription": "",
       "resultDescription": "",
-      "comingSoonText": "Coming soon..."
+      "comingSoonText": "Coming soon...",
+      "slug": "concretesculpture"
     }
   ],
   "aboutContent": {
@@ -776,5 +782,5 @@ export const persistedData: {
     "email": "baustadmagnus@gmail.com",
     "formIntro": "Network and contact"
   },
-  "lastUpdated": "2026-10-08T14:19:01.286Z"
+  "lastUpdated": "2026-10-08T14:22:15.846Z"
 };
