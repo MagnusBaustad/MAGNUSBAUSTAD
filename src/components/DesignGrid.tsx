@@ -45,22 +45,22 @@ export const DesignGrid: React.FC<DesignGridProps> = ({
                 onClick={() => onSelectProject(project.id)}
                 className={`group relative w-full aspect-[4/3] overflow-hidden cursor-pointer bg-neutral-900 ${orderClass}`}
               >
-                {/* Primary Cover Image with subtle defuse and scale transition */}
+                {/* Primary Cover Image: completely static on phone, defuse and scale transition on desktop */}
                 <img
                   src={project.coverImage}
                   alt={project.title}
                   loading={index < 4 ? 'eager' : 'lazy'}
                   referrerPolicy="no-referrer"
-                  className={`w-full h-full object-cover object-center image-defuse ${project.coverImageClassName || ''}`}
+                  className={`w-full h-full object-cover object-center md:image-defuse ${project.coverImageClassName || ''}`}
                 />
 
-                {/* Subtle diffusion overlay that dims on hover to highlight white typography */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-300 pointer-events-none" />
+                {/* Desktop only: Subtle diffusion overlay that dims on hover to highlight centered white typography */}
+                <div className="hidden md:block absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-300 pointer-events-none" />
 
-                {/* Project Title ONLY that appears when hovered (white text, centered vertically & horizontally) */}
+                {/* Desktop only: Centered Project Title that appears when hovered */}
                 <div
                   id={`project-overlay-${project.id}`}
-                  className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  className="hidden md:flex absolute inset-0 z-10 flex-col items-center justify-center text-center p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                 >
                   <h2 className="m-0 p-0 text-xs sm:text-sm md:text-base font-medium tracking-tight text-white max-w-[90%] text-center leading-snug drop-shadow-sm select-none">
                     {project.title}

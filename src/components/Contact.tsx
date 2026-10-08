@@ -29,43 +29,38 @@ export const Contact: React.FC = () => {
     setSubmitted(true);
   };
 
-  const formattedHeadline = contactContent.headline.includes('\n')
-    ? contactContent.headline
-    : contactContent.headline.replace('meaningful ', 'meaningful\n');
+  const cleanHeadline = (contactContent.headline || "Let's build meaningful products together.")
+    .replace(/\n+/g, ' ')
+    .trim();
 
-  const formattedSubheadline = (() => {
-    const raw = contactContent.subheadline;
-    if (
-      raw.includes('Currently available for select industrial design') ||
-      raw.includes('commissions, in-house roles') ||
-      raw.includes('R&D collaborations')
-    ) {
-      return "Currently available for select industrial design\ncommissions, in-house roles, and exploratory\nR&D collaborations.";
-    }
-    return raw;
-  })();
+  const cleanSubheadline = (
+    contactContent.subheadline ||
+    "Currently available for select industrial design commissions, in-house roles, and exploratory R&D collaborations."
+  )
+    .replace(/\n+/g, ' ')
+    .trim();
 
   return (
     <main id="contact-page" className="w-full bg-white text-black min-h-screen">
       <div className="w-full px-6 sm:px-10 lg:px-14 pt-3 sm:pt-6 pb-12 sm:pb-20">
         
-        <div className="pb-12 border-b border-neutral-200">
+        {/* Top header: bounded to max-w-4xl to exactly match the width of the contact box below */}
+        <div className="w-full max-w-4xl pb-10 sm:pb-12 border-b border-neutral-200">
           <EditableText
             as="h1"
-            value={formattedHeadline}
+            value={cleanHeadline}
             onSave={(val) => updateContactContent('headline', val)}
             isEditMode={isEditMode}
-            multiline
-            className="text-2xl sm:text-4xl md:text-[clamp(32px,3.8vw,56px)] font-bold tracking-tight whitespace-pre-line md:whitespace-nowrap"
+            className="w-full text-left text-2xl sm:text-3xl md:text-4xl lg:text-[clamp(32px,3.8vw,50px)] font-bold tracking-tight text-black leading-[1.12] m-0"
             placeholder="Contact headline..."
           />
           <EditableText
             as="p"
-            value={formattedSubheadline}
+            value={cleanSubheadline}
             onSave={(val) => updateContactContent('subheadline', val)}
             isEditMode={isEditMode}
             multiline
-            className="text-[13px] sm:text-base lg:text-lg text-neutral-600 mt-4 max-w-none font-normal whitespace-pre-line md:whitespace-nowrap leading-relaxed"
+            className="w-full text-left text-sm sm:text-base md:text-lg lg:text-[19px] text-neutral-600 mt-4 sm:mt-5 font-normal leading-relaxed"
             placeholder="Contact subheadline..."
           />
         </div>
@@ -137,7 +132,7 @@ export const Contact: React.FC = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Astrid Lind"
-                      className="w-full px-4 py-3 bg-white border border-neutral-300 text-sm focus:outline-none focus:border-black transition-colors"
+                      className="w-full px-4 py-3.5 sm:py-3 bg-white border border-neutral-300 text-base sm:text-sm focus:outline-none focus:border-black transition-colors"
                     />
                   </div>
 
@@ -151,7 +146,7 @@ export const Contact: React.FC = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="astrid@company.com"
-                      className="w-full px-4 py-3 bg-white border border-neutral-300 text-sm focus:outline-none focus:border-black transition-colors"
+                      className="w-full px-4 py-3.5 sm:py-3 bg-white border border-neutral-300 text-base sm:text-sm focus:outline-none focus:border-black transition-colors"
                     />
                   </div>
                 </div>
@@ -165,7 +160,7 @@ export const Contact: React.FC = () => {
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="e.g. New Product Development / R&D Commission"
-                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-sm focus:outline-none focus:border-black transition-colors"
+                    className="w-full px-4 py-3.5 sm:py-3 bg-white border border-neutral-300 text-base sm:text-sm focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
 
@@ -179,7 +174,7 @@ export const Contact: React.FC = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell me about your product concept, timeline, or what you'd like to collaborate on..."
-                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-sm focus:outline-none focus:border-black transition-colors"
+                    className="w-full px-4 py-3.5 sm:py-3 bg-white border border-neutral-300 text-base sm:text-sm focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
 

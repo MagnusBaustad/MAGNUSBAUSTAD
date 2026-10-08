@@ -83,9 +83,9 @@ export const defaultAboutContent: AboutContent = {
 };
 
 export const defaultContactContent: ContactContent = {
-  headline: "Let's build meaningful\nproducts together.",
+  headline: "Let's build meaningful products together.",
   subheadline:
-    "Currently available for select industrial design\ncommissions, in-house roles, and exploratory\nR&D collaborations.",
+    "Currently available for select industrial design commissions, in-house roles, and exploratory R&D collaborations.",
   email: "baustadmagnus@gmail.com",
   formIntro: "Network and contact",
 };
