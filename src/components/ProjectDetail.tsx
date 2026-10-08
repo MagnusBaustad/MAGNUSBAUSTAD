@@ -72,37 +72,67 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({
   const v9ContainerRef = useRef<HTMLDivElement>(null);
   const v11ContainerRef = useRef<HTMLDivElement>(null);
 
-  const processImages = (project.processImages && project.processImages.length > 0)
-    ? project.processImages
-    : (project.id === 'rottefella-extend'
-        ? [ty1Image, ty21Image, ty6Image]
-        : (project.id === 'tacta-analog-synthesizer'
-            ? [e7Image, e2Image, e3Image]
-            : (project.id === 'kraft-ergonomic-chisel-set'
-                ? [bay1Image, bay2Image]
-                : (project.id === 'vita-smart-inhaler'
-                    ? [v9Image, v2Image, v3Image, v10Image, v5Image]
-                    : (project.id === 'lumen-modular-kettle'
-                        ? [k1Image, k2Image]
-                        : (project.id === 'aura-circadian-desk-lamp'
-                            ? [gs1Image, gs2Image, ffImage]
-                            : (project.process?.phases?.flatMap((phase) => phase.images.map((img) => img.url)) || [])))))));
+  const processImages = (() => {
+    const raw = project.processImages;
+    if (raw && raw.length > 0) {
+      const hasBrokenStringPaths = raw.some(
+        (img) => typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))
+      );
+      if (!hasBrokenStringPaths) {
+        return raw;
+      }
+    }
+    if (project.id === 'aura-circadian-desk-lamp') {
+      return [gs1Image, gs2Image, ffImage];
+    }
+    if (project.id === 'rottefella-extend') {
+      return [ty1Image, ty21Image, ty6Image];
+    }
+    if (project.id === 'tacta-analog-synthesizer') {
+      return [e7Image, e2Image, e3Image];
+    }
+    if (project.id === 'kraft-ergonomic-chisel-set') {
+      return [bay1Image, bay2Image];
+    }
+    if (project.id === 'vita-smart-inhaler') {
+      return [v9Image, v11Image, v2Image, v3Image, v10Image, v14Image, v13Image, v12Image];
+    }
+    if (project.id === 'lumen-modular-kettle') {
+      return [k1Image, k2Image];
+    }
+    return (project.process?.phases?.flatMap((phase) => phase.images.map((img) => img.url)) || []);
+  })();
 
-  const rawResultImages = (project.resultImages && project.resultImages.length > 0)
-    ? project.resultImages
-    : (project.id === 'rottefella-extend'
-        ? [ty3Image, ty4Image, ty5Image]
-        : (project.id === 'tacta-analog-synthesizer'
-            ? [e4Image, e5Image, e6Image]
-            : (project.id === 'kraft-ergonomic-chisel-set'
-                ? [bay3Image]
-                : (project.id === 'vita-smart-inhaler'
-                    ? [v6Image, v7Image, v8Image]
-                    : (project.id === 'lumen-modular-kettle'
-                        ? [p1Image, p2Image, p3Image]
-                        : (project.id === 'aura-circadian-desk-lamp'
-                            ? [r1Image, r2Image, r3Image]
-                            : (project.finalResult?.images?.map((img) => img.url) || [])))))));
+  const rawResultImages = (() => {
+    const raw = project.resultImages;
+    if (raw && raw.length > 0) {
+      const hasBrokenStringPaths = raw.some(
+        (img) => typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))
+      );
+      if (!hasBrokenStringPaths) {
+        return raw;
+      }
+    }
+    if (project.id === 'aura-circadian-desk-lamp') {
+      return [r1Image, r2Image, r3Image];
+    }
+    if (project.id === 'rottefella-extend') {
+      return [ty3Image, ty4Image, ty5Image];
+    }
+    if (project.id === 'tacta-analog-synthesizer') {
+      return [e4Image, e5Image, e6Image];
+    }
+    if (project.id === 'kraft-ergonomic-chisel-set') {
+      return [bay3Image];
+    }
+    if (project.id === 'vita-smart-inhaler') {
+      return [v6Image, v7Image, v8Image];
+    }
+    if (project.id === 'lumen-modular-kettle') {
+      return [p1Image, p2Image, p3Image];
+    }
+    return (project.finalResult?.images?.map((img) => img.url) || []);
+  })();
 
   const desktopResultImages =
     project.id === 'kraft-ergonomic-chisel-set'
@@ -169,6 +199,17 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({
     reader.readAsDataURL(file);
   };
 
+  const isCollaborationProject =
+    project.id === 'kraft-ergonomic-chisel-set' ||
+    project.id === 'vita-smart-inhaler' ||
+    (project.title && project.title.toLowerCase().includes('concrete')) ||
+    (project.title && project.title.toLowerCase().includes('vestre'));
+
+  const defaultProjectType = isCollaborationProject ? 'Collaboration Project' : 'Individual Project';
+
+  const desktopProjectType = project.projectType || defaultProjectType;
+  const phoneProjectType = project.projectType || defaultProjectType;
+
   return (
     <article id={`project-detail-${project.id}`} className="w-full bg-white text-black min-h-screen">
       {/* Project Header Overview */}
@@ -198,8 +239,18 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({
             </div>
           </div>
 
-          {/* Focus and Context: hidden on mobile, shown on desktop (md:block) */}
+          {/* Desktop only: project type, Focus and Context right-aligned */}
           <div className="hidden md:block text-xs tracking-wider uppercase text-neutral-500 space-y-1.5 md:text-right shrink-0">
+            <div>
+              <EditableText
+                as="span"
+                value={desktopProjectType}
+                onSave={(val) => updateField(project.id, ['projectType'], val)}
+                isEditMode={isEditMode}
+                className="text-black font-medium"
+                placeholder="Project type..."
+              />
+            </div>
             <div>
               <EditableText
                 as="span"
@@ -289,8 +340,18 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({
         )}
       </div>
 
-      {/* Phone version only: Focus and Context text below the first image, before challenge section */}
+      {/* Phone version only: Project type, Focus and Context text below the first image, before challenge section */}
       <div className="block md:hidden w-full px-6 mb-5 text-[10px] font-sans font-normal normal-case tracking-normal text-neutral-600 space-y-1">
+        <div>
+          <EditableText
+            as="span"
+            value={phoneProjectType}
+            onSave={(val) => updateField(project.id, ['projectType'], val)}
+            isEditMode={isEditMode}
+            className="text-neutral-600 font-normal normal-case text-[10px]"
+            placeholder="Prosjekttype..."
+          />
+        </div>
         <div>
           <EditableText
             as="span"

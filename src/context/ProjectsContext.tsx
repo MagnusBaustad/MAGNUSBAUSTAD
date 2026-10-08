@@ -81,18 +81,57 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           title: effectiveTitle,
           isComingSoon: def.isComingSoon,
           comingSoonText: (custom.comingSoonText && custom.comingSoonText.trim() !== '') ? custom.comingSoonText : 'Coming soon...',
+          projectType: custom.projectType || def.projectType,
           coverImage: def.coverImage,
-          detailHeroImage: (custom.detailHeroImage && (custom.detailHeroImage.startsWith('data:') || custom.detailHeroImage.startsWith('blob:'))) ? custom.detailHeroImage : ((def.id === 'aura-circadian-desk-lamp' || def.id === 'kraft-ergonomic-chisel-set') ? def.detailHeroImage : (custom.detailHeroImage || def.detailHeroImage)),
-          processImages: (custom.processImages && custom.processImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
-            ? custom.processImages
-            : ((def.id === 'vita-smart-inhaler' || def.id === 'tacta-analog-synthesizer' || def.id === 'kraft-ergonomic-chisel-set' || def.id === 'rottefella-extend' || !custom.processImages || custom.processImages.length === 0) ? def.processImages : custom.processImages),
+          detailHeroImage: (custom.detailHeroImage && (custom.detailHeroImage.startsWith('data:') || custom.detailHeroImage.startsWith('blob:')))
+            ? custom.detailHeroImage
+            : (def.detailHeroImage || def.coverImage),
+          processImages: (() => {
+            if (!custom.processImages || custom.processImages.length === 0) return def.processImages;
+            const hasUploads = custom.processImages.some(
+              (img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))
+            );
+            if (!hasUploads) {
+              return def.processImages;
+            }
+            return custom.processImages.map((img: string, idx: number) => {
+              if (typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))) {
+                return (def.processImages && def.processImages[idx]) || img;
+              }
+              return img;
+            });
+          })(),
           processImagesFullWidth: def.processImagesFullWidth ?? custom.processImagesFullWidth,
-          resultImages: (custom.resultImages && custom.resultImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
-            ? custom.resultImages
-            : ((def.id === 'vita-smart-inhaler' || def.id === 'tacta-analog-synthesizer' || def.id === 'aura-circadian-desk-lamp' || def.id === 'kraft-ergonomic-chisel-set' || def.id === 'rottefella-extend' || !custom.resultImages || custom.resultImages.length === 0) ? def.resultImages : custom.resultImages),
-          phoneResultImages: (custom.phoneResultImages && custom.phoneResultImages.some((img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))))
-            ? custom.phoneResultImages
-            : ((def.id === 'kraft-ergonomic-chisel-set' || !custom.phoneResultImages || custom.phoneResultImages.length === 0) ? def.phoneResultImages : custom.phoneResultImages),
+          resultImages: (() => {
+            if (!custom.resultImages || custom.resultImages.length === 0) return def.resultImages;
+            const hasUploads = custom.resultImages.some(
+              (img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))
+            );
+            if (!hasUploads) {
+              return def.resultImages;
+            }
+            return custom.resultImages.map((img: string, idx: number) => {
+              if (typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))) {
+                return (def.resultImages && def.resultImages[idx]) || img;
+              }
+              return img;
+            });
+          })(),
+          phoneResultImages: (() => {
+            if (!custom.phoneResultImages || custom.phoneResultImages.length === 0) return def.phoneResultImages;
+            const hasUploads = custom.phoneResultImages.some(
+              (img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))
+            );
+            if (!hasUploads) {
+              return def.phoneResultImages;
+            }
+            return custom.phoneResultImages.map((img: string, idx: number) => {
+              if (typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))) {
+                return (def.phoneResultImages && def.phoneResultImages[idx]) || img;
+              }
+              return img;
+            });
+          })(),
           v9TextBoxes: def.id === 'vita-smart-inhaler' ? ((custom.v9TextBoxes && custom.v9TextBoxes.length > 0) ? custom.v9TextBoxes : def.v9TextBoxes) : undefined,
           v11TextBoxes: def.id === 'vita-smart-inhaler' ? ((custom.v11TextBoxes && custom.v11TextBoxes.length > 0) ? custom.v11TextBoxes : def.v11TextBoxes) : undefined,
           sectionTitles: {

@@ -63,6 +63,7 @@ export interface Project {
   year: string;
   clientOrContext: string;
   focus?: string;
+  projectType?: string;
   coverImage: string;
   detailHeroImage?: string;
   coverImageClassName?: string;

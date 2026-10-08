@@ -24,24 +24,7 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
   isEditMode,
 }) => {
   const allowPhotoUpload = Boolean(isEditMode && isPreviewEnvironment());
-  // Determine initial placeholder state
-  const isInitiallyPlaceholder = (() => {
-    if (!src) return true;
-    if (typeof src === 'string') {
-      if (src.startsWith('data:') && src.length > 200) return false;
-      if (src.startsWith('blob:')) return false;
-      if (
-        src.includes('C1') ||
-        src.includes('C2') ||
-        src.includes('C3')
-      ) {
-        return true;
-      }
-    }
-    return false;
-  })();
-
-  const [isPlaceholder, setIsPlaceholder] = useState<boolean>(isInitiallyPlaceholder);
+  const hasValidSrc = Boolean(src && typeof src === 'string' && src.trim().length > 0);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -63,23 +46,7 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
 
   return (
     <div className="relative w-full m-0 p-0 block leading-none">
-      {/* Hidden tester to detect real image dimensions if file was updated */}
-      <img
-        src={src}
-        alt=""
-        className="hidden"
-        onLoad={(e) => {
-          const img = e.currentTarget;
-          if (img.naturalWidth > 1 && img.naturalHeight > 1) {
-            setIsPlaceholder(false);
-          } else {
-            setIsPlaceholder(true);
-          }
-        }}
-        onError={() => setIsPlaceholder(true)}
-      />
-
-      {isPlaceholder ? (
+      {!hasValidSrc && allowPhotoUpload ? (
         <div
           onDragOver={(e) => {
             e.preventDefault();
