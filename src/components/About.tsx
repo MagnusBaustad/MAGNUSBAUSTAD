@@ -57,36 +57,47 @@ export const About: React.FC<AboutProps> = ({ onNavigate }) => {
           {/* Primary Statement - Moved to the right (sm:ml-auto w-fit) so 'n' in 'in' aligns with 't' in 'contact', text remains left-aligned with itself, bottom-aligned with image */}
           <div className="sm:ml-auto flex flex-col justify-end items-start w-fit">
             <h1 id="about-primary-statement" className="w-fit text-left text-3xl sm:text-4xl md:text-[clamp(36px,3.4vw,52px)] lg:text-[clamp(44px,3.9vw,70px)] xl:text-[clamp(52px,4.3vw,80px)] font-medium tracking-tight leading-[1.08] m-0 text-black">
-              <span className="block sm:whitespace-nowrap text-left">
-                <EditableText
-                  as="span"
-                  value={aboutContent.statementLine1}
-                  onSave={(val) => updateAboutContent('statementLine1', val)}
-                  isEditMode={isEditMode}
-                  className="text-left"
-                  placeholder="Line 1 statement..."
-                />
-              </span>
-              <span className="block sm:whitespace-nowrap text-left">
-                <EditableText
-                  as="span"
-                  value={aboutContent.statementLine2}
-                  onSave={(val) => updateAboutContent('statementLine2', val)}
-                  isEditMode={isEditMode}
-                  className="text-left"
-                  placeholder="Line 2 statement..."
-                />
-              </span>
-              <span className="block sm:whitespace-nowrap text-left">
-                <EditableText
-                  as="span"
-                  value={aboutContent.statementLine3}
-                  onSave={(val) => updateAboutContent('statementLine3', val)}
-                  isEditMode={isEditMode}
-                  className="text-left"
-                  placeholder="Line 3 statement..."
-                />
-              </span>
+              {/* Phone version only: 4 distinct lines */}
+              <div className="block sm:hidden text-left space-y-0.5">
+                <span className="block text-left">Hi! I'm Magnus, a human</span>
+                <span className="block text-left">centric, Industrial Designer</span>
+                <span className="block text-left">specialising in creating</span>
+                <span className="block text-left">life improving products.</span>
+              </div>
+
+              {/* Desktop version (sm and up): 3 lines with editable support */}
+              <div className="hidden sm:block">
+                <span className="block whitespace-nowrap text-left">
+                  <EditableText
+                    as="span"
+                    value={aboutContent.statementLine1}
+                    onSave={(val) => updateAboutContent('statementLine1', val)}
+                    isEditMode={isEditMode}
+                    className="text-left"
+                    placeholder="Line 1 statement..."
+                  />
+                </span>
+                <span className="block whitespace-nowrap text-left">
+                  <EditableText
+                    as="span"
+                    value={aboutContent.statementLine2}
+                    onSave={(val) => updateAboutContent('statementLine2', val)}
+                    isEditMode={isEditMode}
+                    className="text-left"
+                    placeholder="Line 2 statement..."
+                  />
+                </span>
+                <span className="block whitespace-nowrap text-left">
+                  <EditableText
+                    as="span"
+                    value={aboutContent.statementLine3}
+                    onSave={(val) => updateAboutContent('statementLine3', val)}
+                    isEditMode={isEditMode}
+                    className="text-left"
+                    placeholder="Line 3 statement..."
+                  />
+                </span>
+              </div>
             </h1>
           </div>
         </div>
