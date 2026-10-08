@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Upload } from 'lucide-react';
 import { isPreviewEnvironment } from '../utils/preview';
+import { resolveAssetUrl } from '../utils/assetResolver';
 
 interface ProjectImageSlotProps {
   src: string;
@@ -24,7 +25,15 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
   isEditMode,
 }) => {
   const allowPhotoUpload = Boolean(isEditMode && isPreviewEnvironment());
-  const hasValidSrc = Boolean(src && typeof src === 'string' && src.trim().length > 0);
+  const resolvedSrc = resolveAssetUrl(src);
+  const [currentSrc, setCurrentSrc] = useState<string>(resolvedSrc);
+
+  // Sync state if resolvedSrc changes externally
+  React.useEffect(() => {
+    setCurrentSrc(resolveAssetUrl(src));
+  }, [src]);
+
+  const hasValidSrc = Boolean(currentSrc && currentSrc.trim().length > 0);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -106,11 +115,17 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
           }}
         >
           <img
-            src={src}
+            src={currentSrc || resolveAssetUrl(src)}
             alt={alt}
             style={style}
             className={className}
             loading="lazy"
+            onError={() => {
+              const fallback = resolveAssetUrl(src);
+              if (fallback && fallback !== currentSrc) {
+                setCurrentSrc(fallback);
+              }
+            }}
           />
 
           {/* Visual Drop Target Overlay - only in preview edit mode */}

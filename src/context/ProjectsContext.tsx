@@ -9,6 +9,7 @@ import {
 } from '../data/siteContent';
 import { persistedData } from '../data/persistedContent';
 import { isPreviewEnvironment } from '../utils/preview';
+import { resolveAssetUrl } from '../utils/assetResolver';
 
 interface ProjectsContextType {
   projects: Project[];
@@ -73,63 +74,74 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (customList) {
       return defaultProjects.map((def) => {
         const custom = customList!.find((p: Project) => p.id === def.id);
-        if (!custom) return JSON.parse(JSON.stringify(def));
+        if (!custom) {
+          return {
+            ...def,
+            coverImage: resolveAssetUrl(def.coverImage),
+            detailHeroImage: resolveAssetUrl(def.detailHeroImage || def.coverImage),
+            processImages: (def.processImages || []).map(resolveAssetUrl),
+            resultImages: (def.resultImages || []).map(resolveAssetUrl),
+            phoneResultImages: (def.phoneResultImages || []).map(resolveAssetUrl),
+          };
+        }
         const effectiveTitle = custom.title || def.title;
         return {
-          ...JSON.parse(JSON.stringify(def)),
+          ...def,
           ...custom,
           title: effectiveTitle,
           isComingSoon: def.isComingSoon,
           comingSoonText: (custom.comingSoonText && custom.comingSoonText.trim() !== '') ? custom.comingSoonText : 'Coming soon...',
           projectType: custom.projectType || def.projectType,
-          coverImage: def.coverImage,
+          focus: custom.focus || def.focus,
+          clientOrContext: custom.clientOrContext || def.clientOrContext,
+          coverImage: resolveAssetUrl(def.coverImage),
           detailHeroImage: (custom.detailHeroImage && (custom.detailHeroImage.startsWith('data:') || custom.detailHeroImage.startsWith('blob:')))
             ? custom.detailHeroImage
-            : (def.detailHeroImage || def.coverImage),
+            : resolveAssetUrl(def.detailHeroImage || def.coverImage),
           processImages: (() => {
-            if (!custom.processImages || custom.processImages.length === 0) return def.processImages;
+            if (!custom.processImages || custom.processImages.length === 0) return (def.processImages || []).map(resolveAssetUrl);
             const hasUploads = custom.processImages.some(
               (img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))
             );
             if (!hasUploads) {
-              return def.processImages;
+              return (def.processImages || []).map(resolveAssetUrl);
             }
             return custom.processImages.map((img: string, idx: number) => {
-              if (typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))) {
-                return (def.processImages && def.processImages[idx]) || img;
+              if (typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))) {
+                return img;
               }
-              return img;
+              return (def.processImages && def.processImages[idx] ? resolveAssetUrl(def.processImages[idx]) : resolveAssetUrl(img));
             });
           })(),
           processImagesFullWidth: def.processImagesFullWidth ?? custom.processImagesFullWidth,
           resultImages: (() => {
-            if (!custom.resultImages || custom.resultImages.length === 0) return def.resultImages;
+            if (!custom.resultImages || custom.resultImages.length === 0) return (def.resultImages || []).map(resolveAssetUrl);
             const hasUploads = custom.resultImages.some(
               (img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))
             );
             if (!hasUploads) {
-              return def.resultImages;
+              return (def.resultImages || []).map(resolveAssetUrl);
             }
             return custom.resultImages.map((img: string, idx: number) => {
-              if (typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))) {
-                return (def.resultImages && def.resultImages[idx]) || img;
+              if (typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))) {
+                return img;
               }
-              return img;
+              return (def.resultImages && def.resultImages[idx] ? resolveAssetUrl(def.resultImages[idx]) : resolveAssetUrl(img));
             });
           })(),
           phoneResultImages: (() => {
-            if (!custom.phoneResultImages || custom.phoneResultImages.length === 0) return def.phoneResultImages;
+            if (!custom.phoneResultImages || custom.phoneResultImages.length === 0) return (def.phoneResultImages || []).map(resolveAssetUrl);
             const hasUploads = custom.phoneResultImages.some(
               (img: string) => typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))
             );
             if (!hasUploads) {
-              return def.phoneResultImages;
+              return (def.phoneResultImages || []).map(resolveAssetUrl);
             }
             return custom.phoneResultImages.map((img: string, idx: number) => {
-              if (typeof img === 'string' && (img.startsWith('/src/assets/') || img.startsWith('/assets/'))) {
-                return (def.phoneResultImages && def.phoneResultImages[idx]) || img;
+              if (typeof img === 'string' && (img.startsWith('data:') || img.startsWith('blob:'))) {
+                return img;
               }
-              return img;
+              return (def.phoneResultImages && def.phoneResultImages[idx] ? resolveAssetUrl(def.phoneResultImages[idx]) : resolveAssetUrl(img));
             });
           })(),
           v9TextBoxes: def.id === 'vita-smart-inhaler' ? ((custom.v9TextBoxes && custom.v9TextBoxes.length > 0) ? custom.v9TextBoxes : def.v9TextBoxes) : undefined,
@@ -152,7 +164,14 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       });
     }
 
-    return JSON.parse(JSON.stringify(defaultProjects));
+    return defaultProjects.map((def) => ({
+      ...def,
+      coverImage: resolveAssetUrl(def.coverImage),
+      detailHeroImage: resolveAssetUrl(def.detailHeroImage || def.coverImage),
+      processImages: (def.processImages || []).map(resolveAssetUrl),
+      resultImages: (def.resultImages || []).map(resolveAssetUrl),
+      phoneResultImages: (def.phoneResultImages || []).map(resolveAssetUrl),
+    }));
   });
 
   // 2. About Content State

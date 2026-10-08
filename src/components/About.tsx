@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, MapPin, Plus, Trash2 } from 'lucide-react';
 import { PageType } from '../types';
 import portraitImg from '../assets/images/regenerated_image_1790080455082.png';
+import { resolveAssetUrl } from '../utils/assetResolver';
 import { useProjects } from '../context/ProjectsContext';
 import { EditableText } from './EditableText';
 
@@ -47,9 +48,15 @@ export const About: React.FC<AboutProps> = ({ onNavigate }) => {
           <div className="shrink-0 flex flex-col justify-end">
             <div id="about-portrait-card" className="w-40 sm:w-56 md:w-64 lg:w-72 xl:w-80 aspect-[4/5] overflow-hidden">
               <img
-                src={portraitImg}
+                src={resolveAssetUrl(portraitImg)}
                 alt="Magnus Baustad - Industrial Designer"
                 className="w-full h-full object-cover grayscale contrast-105 hover:grayscale-0 transition-all duration-700 block"
+                onError={(e) => {
+                  const fallback = resolveAssetUrl(portraitImg);
+                  if (fallback && e.currentTarget.src !== fallback) {
+                    e.currentTarget.src = fallback;
+                  }
+                }}
               />
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Project } from '../types';
+import { resolveAssetUrl } from '../utils/assetResolver';
 
 interface DesignGridProps {
   projects: Project[];
@@ -47,11 +48,17 @@ export const DesignGrid: React.FC<DesignGridProps> = ({
               >
                 {/* Primary Cover Image: completely static on phone, defuse and scale transition on desktop */}
                 <img
-                  src={project.coverImage}
+                  src={resolveAssetUrl(project.coverImage)}
                   alt={project.title}
                   loading={index < 4 ? 'eager' : 'lazy'}
                   referrerPolicy="no-referrer"
                   className={`w-full h-full object-cover object-center md:image-defuse ${project.coverImageClassName || ''}`}
+                  onError={(e) => {
+                    const fallback = resolveAssetUrl(project.coverImage);
+                    if (fallback && e.currentTarget.src !== fallback) {
+                      e.currentTarget.src = fallback;
+                    }
+                  }}
                 />
 
                 {/* Desktop only: Subtle diffusion overlay that dims on hover to highlight centered white typography */}
