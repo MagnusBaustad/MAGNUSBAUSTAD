@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useProjects } from '../context/ProjectsContext';
+import { isPreviewEnvironment } from '../utils/preview';
 import {
   Edit3,
   Check,
@@ -17,6 +18,11 @@ import {
 } from 'lucide-react';
 
 export const EditToolbar: React.FC = () => {
+  // If viewing the final deployed website (outside AI Studio preview), do not render the toolbar at all
+  if (!isPreviewEnvironment()) {
+    return null;
+  }
+
   const {
     isEditMode,
     toggleEditMode,

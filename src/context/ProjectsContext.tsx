@@ -8,6 +8,7 @@ import {
   defaultContactContent,
 } from '../data/siteContent';
 import { persistedData } from '../data/persistedContent';
+import { isPreviewEnvironment } from '../utils/preview';
 
 interface ProjectsContextType {
   projects: Project[];
@@ -235,8 +236,10 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return () => clearTimeout(timer);
   }, []);
 
-  // Keyboard shortcut: Cmd+E or Ctrl+E to toggle edit mode
+  // Keyboard shortcut: Cmd+E or Ctrl+E to toggle edit mode (preview only)
   useEffect(() => {
+    if (!isPreviewEnvironment()) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'e') {
         const active = document.activeElement;
@@ -362,8 +365,11 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const toggleEditMode = () => {
+    if (!isPreviewEnvironment()) return;
     setIsEditMode((prev) => !prev);
   };
+
+  const effectiveIsEditMode = isPreviewEnvironment() ? isEditMode : false;
 
   return (
     <ProjectsContext.Provider
@@ -371,8 +377,11 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         projects,
         aboutContent,
         contactContent,
-        isEditMode,
-        setIsEditMode,
+        isEditMode: effectiveIsEditMode,
+        setIsEditMode: (val) => {
+          if (!isPreviewEnvironment()) return;
+          setIsEditMode(val);
+        },
         toggleEditMode,
         updateField,
         updateAboutContent,

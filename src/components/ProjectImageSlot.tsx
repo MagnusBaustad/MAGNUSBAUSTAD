@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Upload } from 'lucide-react';
+import { isPreviewEnvironment } from '../utils/preview';
 
 interface ProjectImageSlotProps {
   src: string;
@@ -22,6 +23,7 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
   onOpenLightbox,
   isEditMode,
 }) => {
+  const allowPhotoUpload = Boolean(isEditMode && isPreviewEnvironment());
   // Determine initial placeholder state
   const isInitiallyPlaceholder = (() => {
     if (!src) return true;
@@ -124,13 +126,17 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
           className="relative w-full overflow-hidden cursor-pointer group m-0 p-0 block leading-none"
           onClick={onOpenLightbox}
           onDragOver={(e) => {
-            if (onUpload) {
+            if (allowPhotoUpload && onUpload) {
               e.preventDefault();
               setIsDragging(true);
             }
           }}
           onDragLeave={() => setIsDragging(false)}
-          onDrop={handleDrop}
+          onDrop={(e) => {
+            if (allowPhotoUpload) {
+              handleDrop(e);
+            }
+          }}
         >
           <img
             src={src}
@@ -140,8 +146,8 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
             loading="lazy"
           />
 
-          {/* Visual Drop Target Overlay */}
-          {isDragging && (
+          {/* Visual Drop Target Overlay - only in preview edit mode */}
+          {allowPhotoUpload && isDragging && (
             <div className="absolute inset-0 z-30 bg-black/65 backdrop-blur-sm border-2 border-dashed border-white flex flex-col items-center justify-center text-white pointer-events-none transition-all">
               <Upload className="w-8 h-8 mb-2 animate-bounce" />
               <span className="text-xs font-semibold uppercase tracking-widest">
@@ -150,8 +156,8 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
             </div>
           )}
 
-          {/* Persistent file input for upload */}
-          {onUpload && (
+          {/* Persistent file input for upload - only in preview edit mode */}
+          {allowPhotoUpload && onUpload && (
             <input
               ref={fileInputRef}
               type="file"
@@ -161,8 +167,8 @@ export const ProjectImageSlot: React.FC<ProjectImageSlotProps> = ({
             />
           )}
 
-          {/* Replace button: accessible on hover and visible on mobile */}
-          {onUpload && (
+          {/* Replace button: accessible on hover - only in preview edit mode */}
+          {allowPhotoUpload && onUpload && (
             <div
               onClick={(e) => {
                 e.stopPropagation();
