@@ -1,3 +1,774 @@
 {
-  "test": true
+  "projects": [
+    {
+      "id": "rottefella-extend",
+      "title": "Rottefella Move",
+      "subtitle": "A micro-adjustable bike stem for gravel cyclists",
+      "category": "Sports Equipment & Ergonomics",
+      "year": "2025",
+      "clientOrContext": "Collaboration Project with Rottefella",
+      "projectType": "Individual Project",
+      "coverImage": "/src/assets/images/R9.jpg",
+      "coverImageClassName": "",
+      "processImages": [
+        "/src/assets/images/TY1.png",
+        "/src/assets/images/TY2-1.png",
+        "/src/assets/images/TY6.png"
+      ],
+      "resultImages": [
+        "/src/assets/images/TY3.png",
+        "/src/assets/images/TY4.jpeg",
+        "/src/assets/images/TY5.png"
+      ],
+      "problem": {
+        "title": "Force Vector Losses & Ice Buildup in Classic Cross-Country Bindings",
+        "summary": "Rottefella wanted to explore opportunities beyond skiing and into a broader, year-round sports context. The challenge was to identify a new market where their expertise in adjustable systems, technical performance, and precision manufacturing could translate into a meaningful product opportunity.",
+        "points": [
+          "Energy loss through lateral micro-twisting during push-off phase.",
+          "Inflexible stance balance positions requiring workbench tools to adjust.",
+          "Ice compaction beneath the boot interface altering flex resistance."
+        ]
+      },
+      "whatAndWhy": {
+        "what": "The concept is an extendable stem that allows gravel cyclists to micro-adjust the position of the handlebars while riding. By changing the reach of the handlebars, the system gives the rider greater control over their riding position without requiring tools or stopping.",
+        "why": "Gravel cycling moves between asphalt, gravel, and more technical terrain, with each surface demanding something different from the rider. On asphalt, a longer and more forward position supports efficiency and power transfer. As the terrain becomes more technical, a shorter position brings the handlebars closer, creating greater control and freedom of movement. The adjustable stem allows the bike to adapt to these changing conditions as the rider moves through the landscape.",
+        "decisions": [
+          {
+            "title": "Carbon-Infused Matrix",
+            "description": "A continuous composite spine eliminates torsional twist while cutting overall mass by 28%."
+          },
+          {
+            "title": "QuickLock Stance Tuner",
+            "description": "An ergonomic glove-friendly lever enables instantaneous fore/aft adjustment along the NIS profile."
+          },
+          {
+            "title": "Hydrophobic Contact Shield",
+            "description": "Micro-textured low-surface-energy elastomers shed wet snow and prevent ice packing."
+          }
+        ]
+      },
+      "process": {
+        "intro": "Developed through biomechanical gait sensor trials, snow tunnel wind tests, and functional CNC prototypes tested across Norwegian winter trails.",
+        "phases": [
+          {
+            "phaseNumber": "01",
+            "title": "Biomechanical Force Mapping & CAD Architecture",
+            "description": "Analyzing stride dynamics and pressure propagation to optimize torsional rib structures and hinge pivot points.",
+            "images": [
+              {
+                "url": "/src/assets/images/R9.jpg",
+                "caption": "Chassis geometry and ergonomic QuickLock mechanism.",
+                "tag": "Chassis Modeling",
+                "type": "cad"
+              }
+            ]
+          }
+        ]
+      },
+      "finalResult": {
+        "summary": "Rottefella Extend combines sculptural Scandinavian minimalism with uncompromising athletic efficiency, delivering direct power delivery with every stride.",
+        "specs": [
+          {
+            "label": "Weight",
+            "value": "185g per pair"
+          },
+          {
+            "label": "Adjustment Range",
+            "value": "±25mm tool-free fore/aft position"
+          },
+          {
+            "label": "Materials",
+            "value": "Carbon-reinforced Bio-Polyamide, Stainless Hardware"
+          }
+        ],
+        "images": [
+          {
+            "url": "/src/assets/images/R9.jpg",
+            "caption": "Rottefella Extend Nordic binding platform.",
+            "aspectRatio": "wide"
+          }
+        ]
+      },
+      "focus": "Brand Identity & Expansion",
+      "sectionTitles": {
+        "contextLabel": "Context: ",
+        "focusLabel": "Focus: "
+      },
+      "processDescription": "",
+      "resultDescription": "",
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/R9.jpg",
+      "phoneResultImages": []
+    },
+    {
+      "id": "lumen-modular-kettle",
+      "title": "Focus Watch",
+      "subtitle": "Experience time, don’t measure it",
+      "category": "Home Appliances & Circular Design",
+      "year": "2024",
+      "clientOrContext": "ArtCenter College of Design",
+      "projectType": "Individual Project",
+      "coverImage": "/src/assets/images/H5.png",
+      "coverImageClassName": "!object-[50%_75%]",
+      "processImages": [
+        "/src/assets/images/K1.png",
+        "/src/assets/images/K2.png"
+      ],
+      "resultImages": [
+        "/src/assets/images/P1.png",
+        "/src/assets/images/P2.png",
+        "/src/assets/images/P3.png"
+      ],
+      "problem": {
+        "title": "The 2-Year Planned Obsolescence of Small Domestic Appliances",
+        "summary": "In a world of screens, notifications, and constant digital feedback, time is increasingly something we monitor rather than simply experience. The challenge was to rethink the wristwatch as a quieter object - one that provides information without demanding attention.",
+        "points": [
+          "Microplastic leaching caused by boiling water repeatedly in polypropylene tanks.",
+          "Permanent ultrasonic welding that prevents heating element inspection or descaling.",
+          "Awkward pour geometry leading to wrist strain and splashing hot water."
+        ]
+      },
+      "whatAndWhy": {
+        "what": "The aim was to create a watch that feels like a natural extension of Teenage Engineering’s playful, minimal, and retro-inspired design language. By stripping timekeeping down to its essentials and connecting it to music, the project explores a slower and more focused relationship with the wristwatch. The watch uses an analog display that shows only the current hour, intentionally removing the precision of minutes and seconds. A small secondary interface displays the currently playing song, while wireless connectivity to earbuds allows music to become part of the experience.",
+        "why": "Instead of competing for attention through notifications and constant updates, the watch focuses on two things: the current hour and the music accompanying it. The result is a more restrained wearable experience where technology supports the moment rather than interrupting it.",
+        "decisions": [
+          {
+            "title": "Thermal Glass Body",
+            "description": "High-purity laboratory-grade borosilicate prevents taste contamination and visually indicates water level naturally without micro-tubes."
+          },
+          {
+            "title": "Precision Pour Spout",
+            "description": "Calculated gooseneck spout curve allows micro-metered pour-over flow without drips or laminar turbulence."
+          },
+          {
+            "title": "Cold-Touch Cast Wooden Handle",
+            "description": "Ergonomic FSC-certified Nordic ash handle designed with an offset balance point for zero counter-torque on wrists."
+          }
+        ]
+      },
+      "process": {
+        "intro": "Prototyping focused heavily on hydrodynamic pour tests, fluid thermodynamics, and modular disassembly tolerances.",
+        "phases": [
+          {
+            "phaseNumber": "01",
+            "title": "Hydrodynamic Spout Prototyping",
+            "description": "Testing 14 variations of 3D printed spout geometries with food-safe silicone casting to achieve optimal water laminar flow.",
+            "images": [
+              {
+                "url": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1200&auto=format&fit=crop",
+                "caption": "3D printed spout test iterations hooked to hydraulic test rig.",
+                "tag": "Hydraulic Rig",
+                "type": "prototype"
+              },
+              {
+                "url": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+                "caption": "Thermal imaging of induction coil base heat dispersion.",
+                "tag": "Thermal Analysis",
+                "type": "cad"
+              }
+            ]
+          },
+          {
+            "phaseNumber": "02",
+            "title": "Disassembly Architecture",
+            "description": "Structuring every sub-assembly to be dismountable using a single standard coin or flat screwdriver.",
+            "images": [
+              {
+                "url": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=1200&auto=format&fit=crop",
+                "caption": "Exploded mechanical CAD layout of the base module and thermal controller.",
+                "tag": "Exploded CAD",
+                "type": "cad"
+              }
+            ]
+          }
+        ]
+      },
+      "finalResult": {
+        "summary": "LUMEN stands as an exemplar of the Right to Repair movement, proving domestic appliances can achieve timeless minimalist beauty while honoring ecological responsibility.",
+        "specs": [
+          {
+            "label": "Capacity",
+            "value": "1.0 Liters"
+          },
+          {
+            "label": "Power",
+            "value": "1500W Induction Rapid Boil"
+          },
+          {
+            "label": "Materials",
+            "value": "Borosilicate Glass, 316 Stainless Steel, Solid Ash Wood"
+          },
+          {
+            "label": "Repairability Index",
+            "value": "9.8 / 10"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?q=80&w=1600&auto=format&fit=crop",
+            "caption": "Final production kettle on brushed stainless inductive heating base.",
+            "aspectRatio": "wide"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1600&auto=format&fit=crop",
+            "caption": "Detail of steam release gasket and wood handle junction.",
+            "aspectRatio": "wide"
+          }
+        ]
+      },
+      "focus": "Learning SolidWorks & CMF",
+      "sectionTitles": {
+        "contextLabel": "Context: ",
+        "focusLabel": "Focus: "
+      },
+      "processDescription": "",
+      "resultDescription": "",
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/H5.png",
+      "phoneResultImages": []
+    },
+    {
+      "id": "aura-circadian-desk-lamp",
+      "title": "AR Glasses",
+      "subtitle": "Augmented reality glasses for high performance runners",
+      "category": "Augmented reality glasses for high performance runners",
+      "year": "2024",
+      "clientOrContext": "ArtCenter College of Design",
+      "focus": "Learning SolidWorks & CMF",
+      "projectType": "Individual Project",
+      "coverImage": "/src/assets/images/R4.png",
+      "detailHeroImage": "/src/assets/images/R4.png",
+      "processImages": [
+        "/src/assets/images/GS1.png",
+        "/src/assets/images/GS2.png",
+        "/src/assets/images/FF.png"
+      ],
+      "resultImages": [
+        "/src/assets/images/R1.png",
+        "/src/assets/images/R2.png",
+        "/src/assets/images/R3.png"
+      ],
+      "problem": {
+        "title": "",
+        "summary": "When running at high intensity, checking a watch can interrupt rhythm and concentration. In long-distance races, even small navigation mistakes can have significant consequences. The challenge was to make essential information accessible without forcing the runner to look away from their surroundings.",
+        "points": [
+          "Rigid spring-arm linkages that lose balance tension and droop over time.",
+          "Unnatural blue-spike LED spectra that degrade sleep latency.",
+          "Clunky external plastic transformers taking up floor or socket space."
+        ]
+      },
+      "whatAndWhy": {
+        "what": "The aim was to create a pair of glasses that feels like a natural extension of On's performance driven aesthetic. The glasses display key running metrics on one side of the lens, while the other side provides a simplified view of the route and a virtual pacer. Physical buttons on each side allow the runner to toggle the different interfaces on and off, giving them control over how much information is visible while running. Two integrated cameras also enable the recording of runs.",
+        "why": "By bringing information into the runner’s natural field of view, the glasses reduce the need to break rhythm or look down at a device. The result is an experience where performance data, navigation, and recording become accessible without competing with the act of running itself.",
+        "decisions": [
+          {
+            "title": "Zero-Spring Gravity Equilibrium",
+            "description": "A solid turned brass counterweight balances the 450mm cantilevered beam smoothly across 360° of movement."
+          },
+          {
+            "title": "Full-Spectrum Sun-Mimicking Diode Array",
+            "description": "CRI > 98 light engine transitions imperceptibly from energizing 5500K morning daylight to warm 1800K candle glow by twilight."
+          },
+          {
+            "title": "Micro-Prismatic Glare Diffuser",
+            "description": "Custom micro-honeycomb optical film ensures UGR < 12 glare-free illumination even at maximum lux."
+          }
+        ]
+      },
+      "process": {
+        "intro": "Developing AURA required rigorous kinematic torque calculation and optical micro-lens refinement.",
+        "phases": [
+          {
+            "phaseNumber": "01",
+            "title": "Counterweight Physics Modeling",
+            "description": "Simulating center-of-gravity shifts across the full articulation envelope to ensure zero drift at any angle between 5° and 85°.",
+            "images": [
+              {
+                "url": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop",
+                "caption": "Balancing torque calculations plotted against arm length.",
+                "tag": "Kinematic Study",
+                "type": "cad"
+              },
+              {
+                "url": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+                "caption": "CNC machined pivot joints with embedded self-lubricating bronze bushings.",
+                "tag": "Bearing Machining",
+                "type": "prototype"
+              }
+            ]
+          }
+        ]
+      },
+      "finalResult": {
+        "summary": "AURA effortlessly harmonizes mathematical kinetic precision with calm, serene light that cares for human biological rhythms.",
+        "specs": [
+          {
+            "label": "Reach Radius",
+            "value": "820mm Full Articulation"
+          },
+          {
+            "label": "CCT Range",
+            "value": "1800K to 5500K Continuous"
+          },
+          {
+            "label": "CRI Rating",
+            "value": "Ra 98.4 (R9 > 95)"
+          },
+          {
+            "label": "Finishes",
+            "value": "Matte Anodized Slate / Mirror Brass"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1600&auto=format&fit=crop",
+            "caption": "AURA positioned over a minimalist drafting table in late evening amber mode.",
+            "aspectRatio": "wide"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=1600&auto=format&fit=crop",
+            "caption": "Cast concrete weighted base with capacitive flush dimming slider.",
+            "aspectRatio": "wide"
+          }
+        ]
+      },
+      "sectionTitles": {
+        "contextLabel": "Context: ",
+        "focusLabel": "Focus: "
+      },
+      "processDescription": "",
+      "resultDescription": "",
+      "comingSoonText": "Coming soon...",
+      "phoneResultImages": []
+    },
+    {
+      "id": "vita-smart-inhaler",
+      "title": "Vestre Bench",
+      "subtitle": "Be private, together.",
+      "category": "Medical Devices & Healthcare",
+      "year": "2024",
+      "clientOrContext": "Collaboration Project with Vestre",
+      "focus": "Sustainability & Production",
+      "projectType": "Collaboration Project",
+      "coverImage": "/src/assets/images/Orr.png",
+      "processImages": [
+        "/src/assets/images/V9.jpg",
+        "/src/assets/images/V11.jpg",
+        "/src/assets/images/V2.jpg",
+        "/src/assets/images/V3.jpg",
+        "/src/assets/images/V10.jpg",
+        "/src/assets/images/V14.jpg",
+        "/src/assets/images/V13.jpg",
+        "/src/assets/images/V12.jpg"
+      ],
+      "processImagesFullWidth": true,
+      "v9TextBoxes": [
+        {
+          "id": "box-1",
+          "title": "",
+          "text": "Our meeting with a representative from the Norwegian Association of the Blind gave us valuable insight into how a bench can be designed to be more inclusive and accessible for people with visual impairments.\n\nWe learned that the use of colour can be crucial for visibility and accessibility for people with visual impairments. We also gained a greater understanding of the importance of accessibility and ease of navigation. The bench should be designed with the intention that visually impaired users are able to find and approach it.",
+          "width": 641,
+          "x": 4,
+          "y": 7,
+          "theme": "light-glass",
+          "fontSize": "sm"
+        },
+        {
+          "id": "box-2",
+          "title": "Material Study",
+          "text": "We had a meeting with a physiotherapist to gain insight into how a bench could be designed to be more inclusive and accessible for people with different physical challenges.\n\nThe bench needs to balance ergonomics, stability, and accessibility, making it suitable for older people, individuals with muscular discomfort, and others with mobility challenges.",
+          "width": 501,
+          "x": 52,
+          "y": 70,
+          "theme": "light-glass",
+          "fontSize": "sm"
+        }
+      ],
+      "v11TextBoxes": [
+        {
+          "id": "box-v11-1",
+          "text": "Several people are sitting relatively close to each other. The girls sitting on the lower level appear completely separated from the others, even though they are physically quite close to them.",
+          "width": 237,
+          "x": 30,
+          "y": 8,
+          "theme": "light-glass",
+          "fontSize": "base"
+        },
+        {
+          "id": "box-v11-2",
+          "text": "These two people are sitting very close to each other, less than half a metre apart. They both maintain a sense of personal space by facing in opposite directions.",
+          "width": 205,
+          "x": 79,
+          "y": 68,
+          "theme": "light-glass",
+          "fontSize": "base"
+        },
+        {
+          "id": "box-v11-3",
+          "text": "They maintain some distance and do not sit directly next to each other, while still being relatively close, approximately one metre apart.",
+          "width": 222,
+          "x": 8,
+          "y": 40,
+          "theme": "light-glass",
+          "fontSize": "base"
+        },
+        {
+          "id": "box-v11-4",
+          "text": "Is she turning towards the sun, or is she positioning herself that way to create more personal space?",
+          "width": 198,
+          "x": 32,
+          "y": 73,
+          "theme": "light-glass",
+          "fontSize": "base"
+        }
+      ],
+      "resultImages": [
+        "/src/assets/images/V6.jpg",
+        "/src/assets/images/V7.jpg",
+        "/src/assets/images/V8.jpg"
+      ],
+      "problem": {
+        "title": "Social Stigma and Poor Inhalation Adherence in Public Spaces",
+        "summary": "Public spaces often bring people physically close together, while still leaving little room for personal space or retreat. The challenge was to explore how seating could support social interaction without removing the possibility of privacy.",
+        "points": [
+          "Over 60% of patients fail to coordinate actuator press with deep lung inhalation.",
+          "High incidence of forgotten doses due to lack of discreet usage tracking.",
+          "Unsanitary mouthpiece exposure when carried loose in pockets or bags."
+        ]
+      },
+      "whatAndWhy": {
+        "what": "The system consists of two primary modules: a high module and a low module. They can be positioned side by side or front to front, creating different seating configurations depending on the surrounding space and desired degree of interaction. A durable metal frame is combined with warm wooden seating surfaces.",
+        "why": "The modular approach allows the furniture to respond to different social and spatial conditions without changing its fundamental design. At the same time, the simple construction supports efficient production, transportation, and assembly, making the system suitable for public environments.",
+        "decisions": [
+          {
+            "title": "Twist-Lock Hygienic Shroud",
+            "description": "A 90° twisting collar seamlessly conceals the mouthpiece, keeping lint and dirt away without fragile detached caps."
+          },
+          {
+            "title": "Breath-Actuated Micro-Vibration",
+            "description": "A silent internal air-flow sensor delivers a gentle haptic pulse when the user reaches the optimal 5-second breath intake velocity."
+          },
+          {
+            "title": "Warm Biocompatible Touch",
+            "description": "Silky, soft-touch recycled medical-grade polymer with gentle ergonomic contours that fit naturally into the palm."
+          }
+        ]
+      },
+      "process": {
+        "intro": "Extensive user research with 28 asthma and COPD patients in Oslo, analyzing pocket ergonomics and grip accessibility for diverse ages.",
+        "phases": [
+          {
+            "phaseNumber": "01",
+            "title": "Palm Ergonomics & Grip Studies",
+            "description": "Over 40 rapid silicone and resin ergonomic models were tested with patients suffering from reduced hand dexterity and arthritis.",
+            "images": [
+              {
+                "url": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1200&auto=format&fit=crop",
+                "caption": "Patient grip study matrix testing actuation force curves.",
+                "tag": "Usability Testing",
+                "type": "prototype"
+              }
+            ]
+          }
+        ]
+      },
+      "finalResult": {
+        "summary": "VITA represents the future of compassionate medical hardware: humanizing clinical technology and empowering patients with dignity.",
+        "specs": [
+          {
+            "label": "Battery Life",
+            "value": "45 Days on USB-C Fast Charge"
+          },
+          {
+            "label": "Weight",
+            "value": "42 grams (with standard canister)"
+          },
+          {
+            "label": "Dose Tracking",
+            "value": "Low-energy Bluetooth telemetry"
+          },
+          {
+            "label": "Biocompatibility",
+            "value": "ISO 10993 Certified Medical Polymer"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1600&auto=format&fit=crop",
+            "caption": "VITA handheld form showing the closed pocket profile.",
+            "aspectRatio": "wide"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1600&auto=format&fit=crop",
+            "caption": "Twist-to-reveal mouthpiece ready for breath-actuated delivery.",
+            "aspectRatio": "wide"
+          }
+        ]
+      },
+      "sectionTitles": {
+        "contextLabel": "Context: ",
+        "focusLabel": "Focus: "
+      },
+      "processDescription": "",
+      "resultDescription": "",
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/Orr.png",
+      "phoneResultImages": []
+    },
+    {
+      "id": "tacta-analog-synthesizer",
+      "title": "Erling Stool",
+      "subtitle": "A tribute to our great Erling Braut Haaland",
+      "category": "Electronic Musical Instruments",
+      "year": "2025",
+      "clientOrContext": "The Oslo School of Architecture and Design",
+      "focus": "Sustainability & Material Integrity",
+      "projectType": "Individual Project",
+      "coverImage": "/src/assets/images/H2.png",
+      "processImages": [
+        "/src/assets/images/E7.png",
+        "/src/assets/images/E2.jpg",
+        "/src/assets/images/E3.png"
+      ],
+      "resultImages": [
+        "/src/assets/images/E4.png",
+        "/src/assets/images/E5.png",
+        "/src/assets/images/E6.png"
+      ],
+      "problem": {
+        "title": "Digital Fatigue in Modern Music Production",
+        "summary": "The project began with two simple constraints: the stool had to be made entirely from wood and fit within a 50 × 50 × 50 cm volume. Rather than treating these limitations as restrictions, they became a framework for exploring proportion, structure, and construction through minimal means.",
+        "points": [
+          "Zero tactile memory when navigating virtual software synthesizer plugins.",
+          "Visual distraction from endless software waveforms rather than listening with ears.",
+          "Flimsy plastic knobs with wobble and low rotational resistance."
+        ]
+      },
+      "whatAndWhy": {
+        "what": "The goal was to create a stool that feels stable and refined while allowing its construction to become part of its character. The stool is constructed from beechwood, selected for its strength and subtle grain. Precise load-bearing connections provide the structural foundation, while walnut dowels reinforce the joints and introduce a contrasting material detail at key connection points.",
+        "why": "Rather than hiding the construction, the stool uses its joints as an integral part of the visual language. The combination of beech and walnut creates a restrained contrast, while the precise joinery allows a simple form to achieve both durability and character.",
+        "decisions": [
+          {
+            "title": "One-Knob-Per-Function Architecture",
+            "description": "No hidden sub-menus, no modifier shift keys. What you see is exactly what you hear."
+          },
+          {
+            "title": "Weight-Balanced Anodized Knobs",
+            "description": "Solid aluminum dials machined with calibrated thumb notches for blind micro-adjustments on dark stages."
+          }
+        ]
+      },
+      "process": {
+        "intro": "Prototyping audio circuits on breadboards and developing mechanical switch tactile detents over several iteration cycles.",
+        "phases": [
+          {
+            "phaseNumber": "01",
+            "title": "Front-Panel Spatial Architecture",
+            "description": "Structuring signal flow from left (Oscillators) to center (Filters) to right (Envelopes and FX) following natural human reading direction.",
+            "images": [
+              {
+                "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+                "caption": "Early front-panel layout testing spacing between rotary encoders.",
+                "tag": "Hardware Layout",
+                "type": "cad"
+              }
+            ]
+          }
+        ]
+      },
+      "finalResult": {
+        "summary": "TACTA has been adopted by studio producers worldwide as an antidote to screen exhaustion, celebrated as an heirloom instrument for generations.",
+        "specs": [
+          {
+            "label": "Architecture",
+            "value": "Discrete 6-Voice Analog Voltage-Controlled Synthesizer"
+          },
+          {
+            "label": "Controls",
+            "value": "48 Solid Machined Knobs, 16 Magnetic Rockers"
+          },
+          {
+            "label": "Chassis",
+            "value": "Matte Black Powder-Coated Steel with Oiled Walnut Sides"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1600&auto=format&fit=crop",
+            "caption": "TACTA in studio environment under focused warm task lighting.",
+            "aspectRatio": "wide"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1600&auto=format&fit=crop",
+            "caption": "Close-up of low-pass ladder filter frequency dial.",
+            "aspectRatio": "wide"
+          }
+        ]
+      },
+      "sectionTitles": {
+        "contextLabel": "Context: ",
+        "focusLabel": "Focus: "
+      },
+      "processDescription": "",
+      "resultDescription": "",
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/H2.png",
+      "phoneResultImages": []
+    },
+    {
+      "id": "kraft-ergonomic-chisel-set",
+      "title": "Concrete Sculpture",
+      "subtitle": "Where landscape, design, and technology meet.",
+      "category": "Sculpture & Spatial Objects",
+      "year": "2024",
+      "clientOrContext": "Design Competition by Veidekke & MIL",
+      "focus": "Technology & Surrounding Environment",
+      "projectType": "Collaboration Project",
+      "coverImage": "/src/assets/images/GZ.png",
+      "detailHeroImage": "/src/assets/images/GZ.png",
+      "processImages": [
+        "/src/assets/images/BAY1.png",
+        "/src/assets/images/BAY2.png"
+      ],
+      "resultImages": [
+        "/src/assets/images/BAY3.png"
+      ],
+      "phoneResultImages": [
+        "/src/assets/images/BA1.png",
+        "/src/assets/images/BA2.png",
+        "/src/assets/images/BA3.png"
+      ],
+      "problem": {
+        "title": "Repetitive Strain Injury in Fine Woodworking Crafts",
+        "summary": "Designed for Wilds Minne School in Kristiansand, the project explored how a 3D-printed concrete structure could respond to its surrounding landscape while creating an inviting space for people. The challenge was not only to develop the form, but also to translate it into a new method of architectural fabrication.",
+        "points": [
+          "Vibration shock transmission directly into wrist joints when struck with mallets.",
+          "Handle splitting and collar detachment caused by varying workshop humidity.",
+          "Poor indexing of the bevel angle without looking directly at the timber face."
+        ]
+      },
+      "whatAndWhy": {
+        "what": "The design was inspired by the surrounding landscape and developed around an embracing form intended to create a sense of warmth and welcome. The sculpture was designed not simply as an object to look at, but as a space that people could enter, inhabit, and use.",
+        "why": "As one of the early examples of 3D-printed concrete structures in Norway, the project became an exploration of both form and fabrication. Working with multiple stakeholders also introduced the complexity of a real-world architectural project, where design development, technical constraints, and approvals continuously influence the final result.",
+        "decisions": [
+          {
+            "title": "Asymmetric Thumb Shelf",
+            "description": "A sculpted thumb rest transitions seamlessly into a palm swell, distributing paring pressure across 300% more contact area."
+          },
+          {
+            "title": "Integrated Damping Core",
+            "description": "A high-density elastomer layer inside the brass strike-hoop absorbs high-frequency mallet shock before it reaches the carpals."
+          }
+        ]
+      },
+      "process": {
+        "intro": "Developed in dialogue with master timber joiners in Gudbrandsdalen, balancing ancient Norwegian forging techniques with computational grip mapping.",
+        "phases": [
+          {
+            "phaseNumber": "01",
+            "title": "Hand Pressure Mapping",
+            "description": "Utilizing dynamic capacitive pressure glove sensors during intense dovetail cutting sessions to map peak stress points.",
+            "images": [
+              {
+                "url": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop",
+                "caption": "Tactile pressure gradient map overlaid onto clay handle impressions.",
+                "tag": "Grip Study",
+                "type": "sketch"
+              }
+            ]
+          }
+        ]
+      },
+      "finalResult": {
+        "summary": "KRAFT restores dignity and pain-free longevity to manual joinery, celebrated for both its ergonomic mastery and timeless toolroom aesthetic.",
+        "specs": [
+          {
+            "label": "Blade Steel",
+            "value": "Cryogenically Quenched O1 Tool Steel (61-62 HRC)"
+          },
+          {
+            "label": "Sizes",
+            "value": "6mm, 12mm, 18mm, 25mm"
+          },
+          {
+            "label": "Handle Material",
+            "value": "Flax-reinforced Biocomposite & Turned Brass Hoop"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=1600&auto=format&fit=crop",
+            "caption": "KRAFT set resting on workbench with hand-planed spruce shavings.",
+            "aspectRatio": "wide"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?q=80&w=1600&auto=format&fit=crop",
+            "caption": "Detail of cryogenic blade ground to 25° primary with 30° micro-bevel.",
+            "aspectRatio": "wide"
+          }
+        ]
+      },
+      "sectionTitles": {
+        "contextLabel": "Context: ",
+        "focusLabel": "Focus: "
+      },
+      "processDescription": "",
+      "resultDescription": "",
+      "comingSoonText": "Coming soon..."
+    }
+  ],
+  "aboutContent": {
+    "statementLine1": "Hi! I'm Magnus, a human centric,",
+    "statementLine2": "Industrial Designer specialising in",
+    "statementLine3": "creating life improving products.",
+    "nameBadge": "Magnus Baustad",
+    "locationBadge": "Oslo, Norway",
+    "toolsTitle": "Tools & Capabilities",
+    "tools": [
+      "Blender",
+      "Rhino 3D",
+      "SolidWorks",
+      "KeyShot Rendering",
+      "Fusion 360",
+      "AI Sufficient",
+      "Rapid Foam Prototyping",
+      "CNC Milling & Lathe",
+      "SLA / FDM 3D Printing",
+      "Silicone Molding",
+      "Adobe Creative Suite",
+      "Figma",
+      "Design for Manufacturing (DFM)",
+      "Mechanical Disassembly"
+    ],
+    "bioParagraph1": "I’m an industrial design student in my final year at AHO, with a background from Scandinavian Design College in Denmark, Designinstituttet in Norway, and an exchange semester at ArtCenter College of Design in California. Experiencing design across different environments has shaped a hands on, open minded approach to products, materials and making.",
+    "bioParagraph2": "I’m interested in designing products that make everyday life a little better. I’m especially drawn to the things we use every day, and to how thoughtful design can improve the way we live, move, work, and interact with our surroundings.",
+    "bioParagraph3": "I use real materials, production methods, technical limitations, and contextual constraints as important parts of my design process. I like getting close to how something is actually made, and I’m often most engaged when an idea moves from the screen into the workshop.",
+    "bioParagraph4": "My work spans products and furniture, with a focus on creating practical objects that have a clear connection between their purpose, material, and way of being made.",
+    "ctaText": "Let's collaborate",
+    "methodologyTitle": "Methodology & Core Disciplines",
+    "methodologies": [
+      {
+        "id": "01",
+        "title": "Human Ergonomics",
+        "description": "Ergonomic analysis, tactile feedback calibration, interviews and observational user research."
+      },
+      {
+        "id": "02",
+        "title": "Materiality & CMF",
+        "description": "Exploration of circular bio-composites, cast aluminum, CNC brass and textured finishes."
+      },
+      {
+        "id": "03",
+        "title": "Circular Assembly",
+        "description": "Design for disassembly, zero-glue joints, design for repairability and easy recycling."
+      }
+    ]
+  },
+  "contactContent": {
+    "headline": "Let's build meaningful\nproducts together.",
+    "subheadline": "Currently available for select industrial design commissions, in-house roles, and exploratory R&D collaborations.",
+    "email": "baustadmagnus@gmail.com",
+    "formIntro": "Network and contact"
+  },
+  "lastUpdated": "2026-10-08T14:19:01.286Z"
 }

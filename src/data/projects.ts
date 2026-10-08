@@ -73,6 +73,7 @@ export const projects: Project[] = [
     clientOrContext: 'Collaboration Project with Rottefella',
     projectType: 'Individual Project',
     coverImage: r9Image,
+    detailHeroImage: r9Image,
     coverImageClassName: '',
     processImages: [ty1Image, ty21Image, ty6Image],
     resultImages: [ty3Image, ty4Image, ty5Image],
@@ -142,6 +143,7 @@ export const projects: Project[] = [
     clientOrContext: 'ArtCenter College of Design',
     projectType: 'Individual Project',
     coverImage: lumenCoverImage,
+    detailHeroImage: lumenCoverImage,
     coverImageClassName: '!object-[50%_75%]',
     processImages: [k1Image, k2Image],
     resultImages: [p1Image, p2Image, p3Image],
@@ -350,6 +352,7 @@ export const projects: Project[] = [
     focus: 'Sustainability & Production',
     projectType: 'Collaboration Project',
     coverImage: orrCoverImage,
+    detailHeroImage: orrCoverImage,
     processImages: [
       v9Image,
       v11Image,
@@ -500,6 +503,7 @@ export const projects: Project[] = [
     focus: 'Sustainability & Material Integrity',
     projectType: 'Individual Project',
     coverImage: auraCoverImage,
+    detailHeroImage: auraCoverImage,
     processImages: [e7Image, e2Image, e3Image],
     resultImages: [e4Image, e5Image, e6Image],
     problem: {

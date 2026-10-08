@@ -13,6 +13,7 @@ export const persistedData: {
       "category": "Sports Equipment & Ergonomics",
       "year": "2025",
       "clientOrContext": "Collaboration Project with Rottefella",
+      "projectType": "Individual Project",
       "coverImage": "/src/assets/images/R9.jpg",
       "coverImageClassName": "",
       "processImages": [
@@ -101,7 +102,9 @@ export const persistedData: {
       },
       "processDescription": "",
       "resultDescription": "",
-      "comingSoonText": "Coming soon..."
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/R9.jpg",
+      "phoneResultImages": []
     },
     {
       "id": "lumen-modular-kettle",
@@ -110,6 +113,7 @@ export const persistedData: {
       "category": "Home Appliances & Circular Design",
       "year": "2024",
       "clientOrContext": "ArtCenter College of Design",
+      "projectType": "Individual Project",
       "coverImage": "/src/assets/images/H5.png",
       "coverImageClassName": "!object-[50%_75%]",
       "processImages": [
@@ -225,7 +229,9 @@ export const persistedData: {
       },
       "processDescription": "",
       "resultDescription": "",
-      "comingSoonText": "Coming soon..."
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/H5.png",
+      "phoneResultImages": []
     },
     {
       "id": "aura-circadian-desk-lamp",
@@ -235,6 +241,7 @@ export const persistedData: {
       "year": "2024",
       "clientOrContext": "ArtCenter College of Design",
       "focus": "Learning SolidWorks & CMF",
+      "projectType": "Individual Project",
       "coverImage": "/src/assets/images/R4.png",
       "detailHeroImage": "/src/assets/images/R4.png",
       "processImages": [
@@ -337,7 +344,8 @@ export const persistedData: {
       },
       "processDescription": "",
       "resultDescription": "",
-      "comingSoonText": "Coming soon..."
+      "comingSoonText": "Coming soon...",
+      "phoneResultImages": []
     },
     {
       "id": "vita-smart-inhaler",
@@ -347,6 +355,7 @@ export const persistedData: {
       "year": "2024",
       "clientOrContext": "Collaboration Project with Vestre",
       "focus": "Sustainability & Production",
+      "projectType": "Collaboration Project",
       "coverImage": "/src/assets/images/Orr.png",
       "processImages": [
         "/src/assets/images/V9.jpg",
@@ -508,7 +517,9 @@ export const persistedData: {
       },
       "processDescription": "",
       "resultDescription": "",
-      "comingSoonText": "Coming soon..."
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/Orr.png",
+      "phoneResultImages": []
     },
     {
       "id": "tacta-analog-synthesizer",
@@ -518,6 +529,7 @@ export const persistedData: {
       "year": "2025",
       "clientOrContext": "The Oslo School of Architecture and Design",
       "focus": "Sustainability & Material Integrity",
+      "projectType": "Individual Project",
       "coverImage": "/src/assets/images/H2.png",
       "processImages": [
         "/src/assets/images/E7.png",
@@ -605,7 +617,9 @@ export const persistedData: {
       },
       "processDescription": "",
       "resultDescription": "",
-      "comingSoonText": "Coming soon..."
+      "comingSoonText": "Coming soon...",
+      "detailHeroImage": "/src/assets/images/H2.png",
+      "phoneResultImages": []
     },
     {
       "id": "kraft-ergonomic-chisel-set",
@@ -615,6 +629,7 @@ export const persistedData: {
       "year": "2024",
       "clientOrContext": "Design Competition by Veidekke & MIL",
       "focus": "Technology & Surrounding Environment",
+      "projectType": "Collaboration Project",
       "coverImage": "/src/assets/images/GZ.png",
       "detailHeroImage": "/src/assets/images/GZ.png",
       "processImages": [
@@ -731,7 +746,7 @@ export const persistedData: {
       "Design for Manufacturing (DFM)",
       "Mechanical Disassembly"
     ],
-    "bioParagraph1": "I’m an industrial design student in my final year at the Oslo School of Architecture and Design.",
+    "bioParagraph1": "I’m an industrial design student in my final year at AHO, with a background from Scandinavian Design College in Denmark, Designinstituttet in Norway, and an exchange semester at ArtCenter College of Design in California. Experiencing design across different environments has shaped a hands on, open minded approach to products, materials and making.",
     "bioParagraph2": "I’m interested in designing products that make everyday life a little better. I’m especially drawn to the things we use every day, and to how thoughtful design can improve the way we live, move, work, and interact with our surroundings.",
     "bioParagraph3": "I use real materials, production methods, technical limitations, and contextual constraints as important parts of my design process. I like getting close to how something is actually made, and I’m often most engaged when an idea moves from the screen into the workshop.",
     "bioParagraph4": "My work spans products and furniture, with a focus on creating practical objects that have a clear connection between their purpose, material, and way of being made.",
@@ -756,10 +771,10 @@ export const persistedData: {
     ]
   },
   "contactContent": {
-    "headline": "Let's build meaningful products together.",
+    "headline": "Let's build meaningful\nproducts together.",
     "subheadline": "Currently available for select industrial design commissions, in-house roles, and exploratory R&D collaborations.",
     "email": "baustadmagnus@gmail.com",
     "formIntro": "Network and contact"
   },
-  "lastUpdated": "2026-10-08T12:25:19.337Z"
+  "lastUpdated": "2026-10-08T14:19:01.286Z"
 };
